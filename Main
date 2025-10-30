@@ -493,7 +493,7 @@
 		<option value="InclR">Inclusive Rounds</option>
 		<option value="IndpR">Independent Rounds</option>
 </select>&emsp;<button onclick="randRulesNwFunc()" title="Selects Round Rules from a List of Preset Options">Random Rule Preset</button></p>
-<fieldset class="Rnds">
+<fieldset>
   <legend><b>1.</b> Round <b>One</b> Allowed Pairs:</legend>
   <select id="autoR1" onchange="autoR1f()">
     <option value="XXX">Auto Pair Selection</option>
@@ -541,7 +541,7 @@
 <p id="R1Result"></p>
 
 <p>
-<fieldset class="Rnds">
+<fieldset>
   <legend><b>2.</b> Round <b>Two</b> Allowed Pairs:</legend>
   <select id="autoR2" onchange="autoR2f()">
     <option value="XXX">Auto Pair Selection</option>
@@ -589,7 +589,7 @@
 <p id="R2Result"></p>
 
 <p>
-<fieldset class="Rnds">
+<fieldset>
   <legend><b>3.</b> Round <b>Three</b> Allowed Pairs:</legend>
   <select id="autoR3" onchange="autoR3f()">
     <option value="XXX">Auto Pair Selection</option>
@@ -653,7 +653,7 @@
 <p id="R3Result"></p>
 
 <p>
-<fieldset class="Rnds">
+<fieldset>
   <legend><b>4.</b> Round <b>Four</b> Allowed Pairs:</legend>
   <select id="autoR4" onchange="autoR4f()">
     <option value="XXX">Auto Pair Selection</option>
@@ -717,7 +717,7 @@
 <p id="R4Result"></p>
 
 <p>
-<fieldset class="Rnds">
+<fieldset>
   <legend><b>5.</b> Round <b>Five</b> Allowed Pairs:</legend>
   <select id="autoR5" onchange="autoR5f()">
     <option value="XXX">Auto Pair Selection</option>
@@ -781,7 +781,7 @@
 <p id="R5Result"></p>
 
 <p>
-<fieldset class="Rnds">
+<fieldset>
   <legend><b>6.</b> Round <b>Six</b> Allowed Pairs:</legend>
   <select id="autoR6" onchange="autoR6f()">
     <option value="XXX">Auto Pair Selection</option>
@@ -845,7 +845,7 @@
 <p id="R6Result"></p>
 
 <p>
-<fieldset class="Rnds">
+<fieldset>
   <legend><b>7.</b> Round <b>Seven</b> Allowed Pairs:</legend>
   <select id="autoR7" onchange="autoR7f()">
     <option value="XXX">Auto Pair Selection</option>
@@ -909,7 +909,7 @@
 <p id="R7Result"></p>
 
 <p>
-<fieldset class="Rnds">
+<fieldset>
   <legend><b>8.</b> Round <b>Eight</b> Allowed Pairs:</legend>
   <select id="autoR8" onchange="autoR8f()">
     <option value="XXX">Auto Pair Selection</option>
@@ -973,7 +973,7 @@
 <p id="R8Result"></p>
 
 <p>
-<fieldset class="Rnds">
+<fieldset>
   <legend><b>9.</b> Round <b>Nine</b> Allowed Pairs:</legend>
   <select id="autoR9" onchange="autoR9f()">
     <option value="XXX">Auto Pair Selection</option>
@@ -1037,7 +1037,7 @@
 <p id="R9Result"></p>
 
 <p>
-<fieldset class="Rnds">
+<fieldset>
   <legend><b>10.</b> Round <b>Ten</b> Allowed Pairs:</legend>
   <select id="autoRX" onchange="autoRXf()">
     <option value="XXX">Auto Pair Selection</option>
@@ -11209,35 +11209,35 @@ PartnerResults=ColorFnc(PartnerResults.replace(/>0</g,'><span style="opacity: 0.
 KdbyPrntRslts='<table><tr '+Cntr+'><td colspan="3" '+BdrBtm+'>Male Alpha + Female Omega</td><td rowspan="7" '+MinSze+'></td><td colspan="3" '+BdrBtm+'>Male Alpha + Female Beta</td><td rowspan="7" '+MinSze+'></td><td colspan="3" '+BdrBtm+'>Male Alpha + Female Alpha</td></tr><tr><td '+BdrRght+'>Male Alpha</td><td '+BdrAlinRght+'>'+aMoF_aMc_Cnt+'</td><td '+PdLeft+'>'+aMoF_aMc_Prc+'</td><td '+BdrRght+'>Male Alpha</td><td '+BdrAlinRght+'>'+aMbF_aMc_Cnt+'</td><td '+PdLeft+'>'+aMbF_aMc_Prc+'</td><td '+BdrRght+'>Male Alpha</td><td '+BdrAlinRght+'>'+aMaF_aMc_Cnt+'</td><td '+PdLeft+'>'+aMaF_aMc_Prc+'</td></tr><tr><td '+BdrRght+'>Male Beta</td><td '+BdrAlinRght+'>'+aMoF_bMc_Cnt+'</td><td '+PdLeft+'>'+aMoF_bMc_Prc+'</td><td '+BdrRght+'>Male Beta</td><td '+BdrAlinRght+'>'+aMbF_bMc_Cnt+'</td><td '+PdLeft+'>'+aMbF_bMc_Prc+'</td><td '+BdrRght+'>Male Beta</td><td '+BdrAlinRght+'>'+aMaF_bMc_Cnt+'</td><td '+PdLeft+'>'+aMaF_bMc_Prc+'</td></tr><tr><td '+BdrRght+'>Male Omega</td><td '+BdrAlinRght+'>'+aMoF_oMc_Cnt+'</td><td '+PdLeft+'>'+aMoF_oMc_Prc+'</td><td '+BdrRght+'>Male Omega</td><td '+BdrAlinRght+'>'+aMbF_oMc_Cnt+'</td><td '+PdLeft+'>'+aMbF_oMc_Prc+'</td><td '+BdrRght+'>Male Omega</td><td '+BdrAlinRght+'>'+aMaF_oMc_Cnt+'</td><td '+PdLeft+'>'+aMaF_oMc_Prc+'</td></tr><tr><td '+BdrRght+'>Female Alpha</td><td '+BdrAlinRght+'>'+aMoF_aFc_Cnt+'</td><td '+PdLeft+'>'+aMoF_aFc_Prc+'</td><td '+BdrRght+'>Female Alpha</td><td '+BdrAlinRght+'>'+aMbF_aFc_Cnt+'</td><td '+PdLeft+'>'+aMbF_aFc_Prc+'</td><td '+BdrRght+'>Female Alpha</td><td '+BdrAlinRght+'>'+aMaF_aFc_Cnt+'</td><td '+PdLeft+'>'+aMaF_aFc_Prc+'</td></tr><tr><td '+BdrRght+'>Female Beta</td><td '+BdrAlinRght+'>'+aMoF_bFc_Cnt+'</td><td '+PdLeft+'>'+aMoF_bFc_Prc+'</td><td '+BdrRght+'>Female Beta</td><td '+BdrAlinRght+'>'+aMbF_bFc_Cnt+'</td><td '+PdLeft+'>'+aMbF_bFc_Prc+'</td><td '+BdrRght+'>Female Beta</td><td '+BdrAlinRght+'>'+aMaF_bFc_Cnt+'</td><td '+PdLeft+'>'+aMaF_bFc_Prc+'</td></tr><tr><td '+BdrRght+'>Female Omega</td><td '+BdrAlinRght+'>'+aMoF_oFc_Cnt+'</td><td '+PdLeft+'>'+aMoF_oFc_Prc+'</td><td '+BdrRght+'>Female Omega</td><td '+BdrAlinRght+'>'+aMbF_oFc_Cnt+'</td><td '+PdLeft+'>'+aMbF_oFc_Prc+'</td><td '+BdrRght+'>Female Omega</td><td '+BdrAlinRght+'>'+aMaF_oFc_Cnt+'</td><td '+PdLeft+'>'+aMaF_oFc_Prc+'</td></tr><tr><td colspan="3" '+MinSze+'></td><td></td><td colspan="3" '+MinSze+'></td><td></td><td colspan="3" '+MinSze+'></td></tr><tr '+Cntr+'><td colspan="3" '+BdrBtm+'>Male Beta + Female Omega</td><td rowspan="7"></td><td colspan="3" '+BdrBtm+'>Male Beta + Female Beta</td><td rowspan="7"></td><td colspan="3" '+BdrBtm+'>Male Beta + Female Alpha</td></tr><tr><td '+BdrRght+'>Male Alpha</td><td '+BdrAlinRght+'>'+bMoF_aMc_Cnt+'</td><td '+PdLeft+'>'+bMoF_aMc_Prc+'</td><td '+BdrRght+'>Male Alpha</td><td '+BdrAlinRght+'>'+bMbF_aMc_Cnt+'</td><td '+PdLeft+'>'+bMbF_aMc_Prc+'</td><td '+BdrRght+'>Male Alpha</td><td '+BdrAlinRght+'>'+bMaF_aMc_Cnt+'</td><td '+PdLeft+'>'+bMaF_aMc_Prc+'</td></tr><tr><td '+BdrRght+'>Male Beta</td><td '+BdrAlinRght+'>'+bMoF_bMc_Cnt+'</td><td '+PdLeft+'>'+bMoF_bMc_Prc+'</td><td '+BdrRght+'>Male Beta</td><td '+BdrAlinRght+'>'+bMbF_bMc_Cnt+'</td><td '+PdLeft+'>'+bMbF_bMc_Prc+'</td><td '+BdrRght+'>Male Beta</td><td '+BdrAlinRght+'>'+bMaF_bMc_Cnt+'</td><td '+PdLeft+'>'+bMaF_bMc_Prc+'</td></tr><tr><td '+BdrRght+'>Male Omega</td><td '+BdrAlinRght+'>'+bMoF_oMc_Cnt+'</td><td '+PdLeft+'>'+bMoF_oMc_Prc+'</td><td '+BdrRght+'>Male Omega</td><td '+BdrAlinRght+'>'+bMbF_oMc_Cnt+'</td><td '+PdLeft+'>'+bMbF_oMc_Prc+'</td><td '+BdrRght+'>Male Omega</td><td '+BdrAlinRght+'>'+bMaF_oMc_Cnt+'</td><td '+PdLeft+'>'+bMaF_oMc_Prc+'</td></tr><tr><td '+BdrRght+'>Female Alpha</td><td '+BdrAlinRght+'>'+bMoF_aFc_Cnt+'</td><td '+PdLeft+'>'+bMoF_aFc_Prc+'</td><td '+BdrRght+'>Female Alpha</td><td '+BdrAlinRght+'>'+bMbF_aFc_Cnt+'</td><td '+PdLeft+'>'+bMbF_aFc_Prc+'</td><td '+BdrRght+'>Female Alpha</td><td '+BdrAlinRght+'>'+bMaF_aFc_Cnt+'</td><td '+PdLeft+'>'+bMaF_aFc_Prc+'</td></tr><tr><td '+BdrRght+'>Female Beta</td><td '+BdrAlinRght+'>'+bMoF_bFc_Cnt+'</td><td '+PdLeft+'>'+bMoF_bFc_Prc+'</td><td '+BdrRght+'>Female Beta</td><td '+BdrAlinRght+'>'+bMbF_bFc_Cnt+'</td><td '+PdLeft+'>'+bMbF_bFc_Prc+'</td><td '+BdrRght+'>Female Beta</td><td '+BdrAlinRght+'>'+bMaF_bFc_Cnt+'</td><td '+PdLeft+'>'+bMaF_bFc_Prc+'</td></tr><tr><td '+BdrRght+'>Female Omega</td><td '+BdrAlinRght+'>'+bMoF_oFc_Cnt+'</td><td '+PdLeft+'>'+bMoF_oFc_Prc+'</td><td '+BdrRght+'>Female Omega</td><td '+BdrAlinRght+'>'+bMbF_oFc_Cnt+'</td><td '+PdLeft+'>'+bMbF_oFc_Prc+'</td><td '+BdrRght+'>Female Omega</td><td '+BdrAlinRght+'>'+bMaF_oFc_Cnt+'</td><td '+PdLeft+'>'+bMaF_oFc_Prc+'</td></tr><tr><td colspan="3" '+MinSze+'></td><td></td><td colspan="3" '+MinSze+'></td><td></td><td colspan="3" '+MinSze+'></td></tr><tr '+Cntr+'><td colspan="3" '+BdrBtm+'>Male Omega + Female Omega</td><td rowspan="7"></td><td colspan="3" '+BdrBtm+'>Male Omega + Female Beta</td><td rowspan="7"></td><td colspan="3" '+BdrBtm+'>Male Omega + Female Alpha</td></tr><tr><td '+BdrRght+'>Male Alpha</td><td '+BdrAlinRght+'>'+oMoF_aMc_Cnt+'</td><td '+PdLeft+'>'+oMoF_aMc_Prc+'</td><td '+BdrRght+'>Male Alpha</td><td '+BdrAlinRght+'>'+oMbF_aMc_Cnt+'</td><td '+PdLeft+'>'+oMbF_aMc_Prc+'</td><td '+BdrRght+'>Male Alpha</td><td '+BdrAlinRght+'>'+oMaF_aMc_Cnt+'</td><td '+PdLeft+'>'+oMaF_aMc_Prc+'</td></tr><tr><td '+BdrRght+'>Male Beta</td><td '+BdrAlinRght+'>'+oMoF_bMc_Cnt+'</td><td '+PdLeft+'>'+oMoF_bMc_Prc+'</td><td '+BdrRght+'>Male Beta</td><td '+BdrAlinRght+'>'+oMbF_bMc_Cnt+'</td><td '+PdLeft+'>'+oMbF_bMc_Prc+'</td><td '+BdrRght+'>Male Beta</td><td '+BdrAlinRght+'>'+oMaF_bMc_Cnt+'</td><td '+PdLeft+'>'+oMaF_bMc_Prc+'</td></tr><tr><td '+BdrRght+'>Male Omega</td><td '+BdrAlinRght+'>'+oMoF_oMc_Cnt+'</td><td '+PdLeft+'>'+oMoF_oMc_Prc+'</td><td '+BdrRght+'>Male Omega</td><td '+BdrAlinRght+'>'+oMbF_oMc_Cnt+'</td><td '+PdLeft+'>'+oMbF_oMc_Prc+'</td><td '+BdrRght+'>Male Omega</td><td '+BdrAlinRght+'>'+oMaF_oMc_Cnt+'</td><td '+PdLeft+'>'+oMaF_oMc_Prc+'</td></tr><tr><td '+BdrRght+'>Female Alpha</td><td '+BdrAlinRght+'>'+oMoF_aFc_Cnt+'</td><td '+PdLeft+'>'+oMoF_aFc_Prc+'</td><td '+BdrRght+'>Female Alpha</td><td '+BdrAlinRght+'>'+oMbF_aFc_Cnt+'</td><td '+PdLeft+'>'+oMbF_aFc_Prc+'</td><td '+BdrRght+'>Female Alpha</td><td '+BdrAlinRght+'>'+oMaF_aFc_Cnt+'</td><td '+PdLeft+'>'+oMaF_aFc_Prc+'</td></tr><tr><td '+BdrRght+'>Female Beta</td><td '+BdrAlinRght+'>'+oMoF_bFc_Cnt+'</td><td '+PdLeft+'>'+oMoF_bFc_Prc+'</td><td '+BdrRght+'>Female Beta</td><td '+BdrAlinRght+'>'+oMbF_bFc_Cnt+'</td><td '+PdLeft+'>'+oMbF_bFc_Prc+'</td><td '+BdrRght+'>Female Beta</td><td '+BdrAlinRght+'>'+oMaF_bFc_Cnt+'</td><td '+PdLeft+'>'+oMaF_bFc_Prc+'</td></tr><tr><td '+BdrRght+'>Female Omega</td><td '+BdrAlinRght+'>'+oMoF_oFc_Cnt+'</td><td '+PdLeft+'>'+oMoF_oFc_Prc+'</td><td '+BdrRght+'>Female Omega</td><td '+BdrAlinRght+'>'+oMbF_oFc_Cnt+'</td><td '+PdLeft+'>'+oMbF_oFc_Prc+'</td><td '+BdrRght+'>Female Omega</td><td '+BdrAlinRght+'>'+oMaF_oFc_Cnt+'</td><td '+PdLeft+'>'+oMaF_oFc_Prc+'</td></tr><tr><td colspan="3" '+MinSze+'></td><td></td><td colspan="3" '+MinSze+'></td><td></td><td colspan="3" '+MinSze+'></td></tr><tr '+Cntr+'><td colspan="3" '+BdrBtm+'>Female Alpha + Female Omega</td><td rowspan="4"></td><td colspan="3" '+BdrBtm+'>Female Alpha + Female Beta</td><td rowspan="4"></td><td colspan="3" '+BdrBtm+'>Female Alpha + Female Alpha</td></tr><tr><td '+BdrRght+'>Female Alpha</td><td '+BdrAlinRght+'>'+aFoF_aFc_Cnt+'</td><td '+PdLeft+'>'+aFoF_aFc_Prc+'</td><td '+BdrRght+'>Female Alpha</td><td '+BdrAlinRght+'>'+aFbF_aFc_Cnt+'</td><td '+PdLeft+'>'+aFbF_aFc_Prc+'</td><td '+BdrRght+'>Female Alpha</td><td '+BdrAlinRght+'>'+aFaF_aFc_Cnt+'</td><td '+PdLeft+'>'+aFaF_aFc_Prc+'</td></tr><tr><td '+BdrRght+'>Female Beta</td><td '+BdrAlinRght+'>'+aFoF_bFc_Cnt+'</td><td '+PdLeft+'>'+aFoF_bFc_Prc+'</td><td '+BdrRght+'>Female Beta</td><td '+BdrAlinRght+'>'+aFbF_bFc_Cnt+'</td><td '+PdLeft+'>'+aFbF_bFc_Prc+'</td><td '+BdrRght+'>Female Beta</td><td '+BdrAlinRght+'>'+aFaF_bFc_Cnt+'</td><td '+PdLeft+'>'+aFaF_bFc_Prc+'</td></tr><tr><td '+BdrRght+'>Female Omega</td><td '+BdrAlinRght+'>'+aFoF_oFc_Cnt+'</td><td '+PdLeft+'>'+aFoF_oFc_Prc+'</td><td '+BdrRght+'>Female Omega</td><td '+BdrAlinRght+'>'+aFbF_oFc_Cnt+'</td><td '+PdLeft+'>'+aFbF_oFc_Prc+'</td><td '+BdrRght+'>Female Omega</td><td '+BdrAlinRght+'>'+aFaF_oFc_Cnt+'</td><td '+PdLeft+'>'+aFaF_oFc_Prc+'</td></tr><tr><td colspan="3" '+MinSze+'></td><td></td><td colspan="3" '+MinSze+'></td><td></td><td colspan="3" '+MinSze+'></td></tr><tr '+Cntr+'><td colspan="3" '+BdrBtm+'>Male Alpha + Male Omega</td><td rowspan="7"></td><td colspan="3" '+BdrBtm+'>Male Beta + Male Omega</td><td rowspan="7"></td><td colspan="3" '+BdrBtm+'>Male Omega + Male Omega</td></tr><tr><td '+BdrRght+'>Male Alpha</td><td '+BdrAlinRght+'>'+aMoM_aMc_Cnt+'</td><td '+PdLeft+'>'+aMoM_aMc_Prc+'</td><td '+BdrRght+'>Male Alpha</td><td '+BdrAlinRght+'>'+bMoM_aMc_Cnt+'</td><td '+PdLeft+'>'+bMoM_aMc_Prc+'</td><td '+BdrRght+'>Male Alpha</td><td '+BdrAlinRght+'>'+oMoM_aMc_Cnt+'</td><td '+PdLeft+'>'+oMoM_aMc_Prc+'</td></tr><tr><td '+BdrRght+'>Male Beta</td><td '+BdrAlinRght+'>'+aMoM_bMc_Cnt+'</td><td '+PdLeft+'>'+aMoM_bMc_Prc+'</td><td '+BdrRght+'>Male Beta</td><td '+BdrAlinRght+'>'+bMoM_bMc_Cnt+'</td><td '+PdLeft+'>'+bMoM_bMc_Prc+'</td><td '+BdrRght+'>Male Beta</td><td '+BdrAlinRght+'>'+oMoM_bMc_Cnt+'</td><td '+PdLeft+'>'+oMoM_bMc_Prc+'</td></tr><tr><td '+BdrRght+'>Male Omega</td><td '+BdrAlinRght+'>'+aMoM_oMc_Cnt+'</td><td '+PdLeft+'>'+aMoM_oMc_Prc+'</td><td '+BdrRght+'>Male Omega</td><td '+BdrAlinRght+'>'+bMoM_oMc_Cnt+'</td><td '+PdLeft+'>'+bMoM_oMc_Prc+'</td><td '+BdrRght+'>Male Omega</td><td '+BdrAlinRght+'>'+oMoM_oMc_Cnt+'</td><td '+PdLeft+'>'+oMoM_oMc_Prc+'</td></tr><tr><td '+BdrRght+'>Female Alpha</td><td '+BdrAlinRght+'>'+aMoM_aFc_Cnt+'</td><td '+PdLeft+'>'+aMoM_aFc_Prc+'</td><td '+BdrRght+'>Female Alpha</td><td '+BdrAlinRght+'>'+bMoM_aFc_Cnt+'</td><td '+PdLeft+'>'+bMoM_aFc_Prc+'</td><td '+BdrRght+'>Female Alpha</td><td '+BdrAlinRght+'>'+oMoM_aFc_Cnt+'</td><td '+PdLeft+'>'+oMoM_aFc_Prc+'</td></tr><tr><td '+BdrRght+'>Female Beta</td><td '+BdrAlinRght+'>'+aMoM_bFc_Cnt+'</td><td '+PdLeft+'>'+aMoM_bFc_Prc+'</td><td '+BdrRght+'>Female Beta</td><td '+BdrAlinRght+'>'+bMoM_bFc_Cnt+'</td><td '+PdLeft+'>'+bMoM_bFc_Prc+'</td><td '+BdrRght+'>Female Beta</td><td '+BdrAlinRght+'>'+oMoM_bFc_Cnt+'</td><td '+PdLeft+'>'+oMoM_bFc_Prc+'</td></tr><tr><td '+BdrRght+'>Female Omega</td><td '+BdrAlinRght+'>'+aMoM_oFc_Cnt+'</td><td '+PdLeft+'>'+aMoM_oFc_Prc+'</td><td '+BdrRght+'>Female Omega</td><td '+BdrAlinRght+'>'+bMoM_oFc_Cnt+'</td><td '+PdLeft+'>'+bMoM_oFc_Prc+'</td><td '+BdrRght+'>Female Omega</td><td '+BdrAlinRght+'>'+oMoM_oFc_Cnt+'</td><td '+PdLeft+'>'+oMoM_oFc_Prc+'</td></tr><tr><td colspan="3" '+MinSze+'></td><td></td><td colspan="3" '+MinSze+'></td><td rowspan="0"></td></tr></table><table><tr><td rowspan="0" style="min-width: 75px;"></td></tr><tr '+Cntr+'><td colspan="3" '+BdrBtm+'><span class="FA">Female</span> <small>Ex-</small><span class="FO">Omega</span> + Female Omega</td><td rowspan="12" '+MinSze+'></td><td colspan="3" '+BdrBtm+'><span class="FA">Female</span> <small>Ex-</small><span class="FB">Beta</span> + Female Omega</td><td rowspan="0" '+MinSze+'></td></tr><tr><td '+BdrRght+'>Female Alpha</td><td '+BdrAlinRght+'>'+oFoF_aFc_Cnt+'</td><td '+PdLeft+'>'+oFoF_aFc_Prc+'</td><td '+BdrRght+'>Female Alpha</td><td '+BdrAlinRght+'>'+oFbF_aFc_Cnt+'</td><td '+PdLeft+'>'+oFbF_aFc_Prc+'</td></tr><tr><td '+BdrRght+'>Female Beta</td><td '+BdrAlinRght+'>'+oFoF_bFc_Cnt+'</td><td '+PdLeft+'>'+oFoF_bFc_Prc+'</td><td '+BdrRght+'>Female Beta</td><td '+BdrAlinRght+'>'+oFbF_bFc_Cnt+'</td><td '+PdLeft+'>'+oFbF_bFc_Prc+'</td></tr><tr><td '+BdrRght+'>Female Omega</td><td '+BdrAlinRght+'>'+oFoF_oFc_Cnt+'</td><td '+PdLeft+'>'+oFoF_oFc_Prc+'</td><td '+BdrRght+'>Female Omega</td><td '+BdrAlinRght+'>'+oFbF_oFc_Cnt+'</td><td '+PdLeft+'>'+oFbF_oFc_Prc+'</td></tr><tr><td colspan="3" '+MinSze+'></td><td colspan="3" '+MinSze+'></td></tr><tr '+Cntr+'><td colspan="3" '+BdrBtm+'>Male Alpha + <span class="MO">Male</span> <small>Ex-</small><span class="MA">Alpha</span></td><td colspan="3" '+BdrBtm+'>Male Alpha + <span class="MO">Male</span> <small>Ex-</small><span class="MB">Beta</span></td></tr><tr><td '+BdrRght+'>Male Alpha</td><td '+BdrAlinRght+'>'+aMaM_aMc_Cnt+'</td><td '+PdLeft+'>'+aMaM_aMc_Prc+'</td><td '+BdrRght+'>Male Alpha</td><td '+BdrAlinRght+'>'+aMbM_aMc_Cnt+'</td><td '+PdLeft+'>'+aMbM_aMc_Prc+'</td></tr><tr><td '+BdrRght+'>Male Beta</td><td '+BdrAlinRght+'>'+aMaM_bMc_Cnt+'</td><td '+PdLeft+'>'+aMaM_bMc_Prc+'</td><td '+BdrRght+'>Male Beta</td><td '+BdrAlinRght+'>'+aMbM_bMc_Cnt+'</td><td '+PdLeft+'>'+aMbM_bMc_Prc+'</td></tr><tr><td '+BdrRght+'>Male Omega</td><td '+BdrAlinRght+'>'+aMaM_oMc_Cnt+'</td><td '+PdLeft+'>'+aMaM_oMc_Prc+'</td><td '+BdrRght+'>Male Omega</td><td '+BdrAlinRght+'>'+aMbM_oMc_Cnt+'</td><td '+PdLeft+'>'+aMbM_oMc_Prc+'</td></tr><tr><td '+BdrRght+'>Female Alpha</td><td '+BdrAlinRght+'>'+aMaM_aFc_Cnt+'</td><td '+PdLeft+'>'+aMaM_aFc_Prc+'</td><td '+BdrRght+'>Female Alpha</td><td '+BdrAlinRght+'>'+aMbM_aFc_Cnt+'</td><td '+PdLeft+'>'+aMbM_aFc_Prc+'</td></tr><tr><td '+BdrRght+'>Female Beta</td><td '+BdrAlinRght+'>'+aMaM_bFc_Cnt+'</td><td '+PdLeft+'>'+aMaM_bFc_Prc+'</td><td '+BdrRght+'>Female Beta</td><td '+BdrAlinRght+'>'+aMbM_bFc_Cnt+'</td><td '+PdLeft+'>'+aMbM_bFc_Prc+'</td></tr><tr><td '+BdrRght+'>Female Omega</td><td '+BdrAlinRght+'>'+aMaM_oFc_Cnt+'</td><td '+PdLeft+'>'+aMaM_oFc_Prc+'</td><td '+BdrRght+'>Female Omega</td><td '+BdrAlinRght+'>'+aMbM_oFc_Cnt+'</td><td '+PdLeft+'>'+aMbM_oFc_Prc+'</td></tr><tr><td colspan="7"></td></tr><tr><td colspan="7" '+Cntr+'>*These Results are Added then Rounded to the Nearest Integer</td></tr></table>';
 KdbyPrntRslts=ColorFnc(KdbyPrntRslts.replace(/>0</g,'><span style="opacity: 0.25;">0</span><'));
 
-aaMcCnt=Rnd100ths(aaMcCnt);
-azMcCnt=Rnd100ths(azMcCnt);
-abMcCnt=Rnd100ths(abMcCnt);
-aoMcCnt=Rnd100ths(aoMcCnt);
-zzMcCnt=Rnd100ths(zzMcCnt);
-zbMcCnt=Rnd100ths(zbMcCnt);
-zoMcCnt=Rnd100ths(zoMcCnt);
+aaMcCnt=Rnd1Ds(aaMcCnt);
+azMcCnt=Rnd1Ds(azMcCnt);
+abMcCnt=Rnd1Ds(abMcCnt);
+aoMcCnt=Rnd1Ds(aoMcCnt);
+zzMcCnt=Rnd1Ds(zzMcCnt);
+zbMcCnt=Rnd1Ds(zbMcCnt);
+zoMcCnt=Rnd1Ds(zoMcCnt);
 
-baMcCnt=Rnd100ths(baMcCnt);
-bzMcCnt=Rnd100ths(bzMcCnt);
-bbMcCnt=Rnd100ths(bbMcCnt);
-boMcCnt=Rnd100ths(boMcCnt);
-obMcCnt=Rnd100ths(obMcCnt);
-ooMcCnt=Rnd100ths(ooMcCnt);
+baMcCnt=Rnd1Ds(baMcCnt);
+bzMcCnt=Rnd1Ds(bzMcCnt);
+bbMcCnt=Rnd1Ds(bbMcCnt);
+boMcCnt=Rnd1Ds(boMcCnt);
+obMcCnt=Rnd1Ds(obMcCnt);
+ooMcCnt=Rnd1Ds(ooMcCnt);
 
-aaFcCnt=Rnd100ths(aaFcCnt);
-abFcCnt=Rnd100ths(abFcCnt);
-baFcCnt=Rnd100ths(baFcCnt);
-bbFcCnt=Rnd100ths(bbFcCnt);
-bzFcCnt=Rnd100ths(bzFcCnt);
-boFcCnt=Rnd100ths(boFcCnt);
+aaFcCnt=Rnd1Ds(aaFcCnt);
+abFcCnt=Rnd1Ds(abFcCnt);
+baFcCnt=Rnd1Ds(baFcCnt);
+bbFcCnt=Rnd1Ds(bbFcCnt);
+bzFcCnt=Rnd1Ds(bzFcCnt);
+boFcCnt=Rnd1Ds(boFcCnt);
 
-zaFcCnt=Rnd100ths(zaFcCnt);
-zbFcCnt=Rnd100ths(zbFcCnt);
-zzFcCnt=Rnd100ths(zzFcCnt);
-oaFcCnt=Rnd100ths(oaFcCnt);
-obFcCnt=Rnd100ths(obFcCnt);
-ozFcCnt=Rnd100ths(ozFcCnt);
-ooFcCnt=Rnd100ths(ooFcCnt);
+zaFcCnt=Rnd1Ds(zaFcCnt);
+zbFcCnt=Rnd1Ds(zbFcCnt);
+zzFcCnt=Rnd1Ds(zzFcCnt);
+oaFcCnt=Rnd1Ds(oaFcCnt);
+obFcCnt=Rnd1Ds(obFcCnt);
+ozFcCnt=Rnd1Ds(ozFcCnt);
+ooFcCnt=Rnd1Ds(ooFcCnt);
 
 var McCnt=aaMcCnt +azMcCnt +abMcCnt +aoMcCnt +zzMcCnt +zbMcCnt +zoMcCnt +baMcCnt +bzMcCnt +bbMcCnt +boMcCnt +obMcCnt +ooMcCnt;
 var FcCnt=aaFcCnt +abFcCnt +baFcCnt +bbFcCnt +bzFcCnt +boFcCnt +zaFcCnt +zbFcCnt +zzFcCnt +oaFcCnt +obFcCnt +ozFcCnt +ooFcCnt;
@@ -11245,24 +11245,24 @@ var FcCnt=aaFcCnt +abFcCnt +baFcCnt +bbFcCnt +bzFcCnt +boFcCnt +zaFcCnt +zbFcCnt
 var FmMlRto=FcCnt/McCnt;
 var MlFmRto=McCnt/FcCnt;
 
-if (FmMlRto > 1.3)  {MFRC=Rnd100ths((MlFmRto+0.9)*10)/20;}
-if (FmMlRto > 1.2)  {MFRC=Rnd100ths((MlFmRto+0.95)*10)/20;}
-if (FmMlRto > 1.1)  {MFRC=Rnd100ths((MlFmRto+1)*10)/20;}
+if (FmMlRto > 1.3)  {MFRC=Rnd1Ds((MlFmRto+0.9)*10)/20;}
+if (FmMlRto > 1.2)  {MFRC=Rnd1Ds((MlFmRto+0.95)*10)/20;}
+if (FmMlRto > 1.1)  {MFRC=Rnd1Ds((MlFmRto+1)*10)/20;}
 
 if (FmMlRto > 1.1 && FmMlRto < 1.5)
-{aaFcCnt=Rnd100ths(aaFcCnt*MFRC);
-abFcCnt=Rnd100ths(abFcCnt*MFRC);
-zzFcCnt=Rnd100ths(zzFcCnt*MFRC);
-zaFcCnt=Rnd100ths(zaFcCnt*MFRC);
-zbFcCnt=Rnd100ths(zbFcCnt*MFRC);
-baFcCnt=Rnd100ths(baFcCnt*MFRC);
-bbFcCnt=Rnd100ths(bbFcCnt*MFRC);
-bzFcCnt=Rnd100ths(bzFcCnt*MFRC);
-boFcCnt=Rnd100ths(boFcCnt*MFRC);
-oaFcCnt=Rnd100ths(oaFcCnt*MFRC);
-obFcCnt=Rnd100ths(obFcCnt*MFRC);
-ozFcCnt=Rnd100ths(ozFcCnt*MFRC);
-ooFcCnt=Rnd100ths(ooFcCnt*MFRC);}
+{aaFcCnt=Rnd1Ds(aaFcCnt*MFRC);
+abFcCnt=Rnd1Ds(abFcCnt*MFRC);
+zzFcCnt=Rnd1Ds(zzFcCnt*MFRC);
+zaFcCnt=Rnd1Ds(zaFcCnt*MFRC);
+zbFcCnt=Rnd1Ds(zbFcCnt*MFRC);
+baFcCnt=Rnd1Ds(baFcCnt*MFRC);
+bbFcCnt=Rnd1Ds(bbFcCnt*MFRC);
+bzFcCnt=Rnd1Ds(bzFcCnt*MFRC);
+boFcCnt=Rnd1Ds(boFcCnt*MFRC);
+oaFcCnt=Rnd1Ds(oaFcCnt*MFRC);
+obFcCnt=Rnd1Ds(obFcCnt*MFRC);
+ozFcCnt=Rnd1Ds(ozFcCnt*MFRC);
+ooFcCnt=Rnd1Ds(ooFcCnt*MFRC);}
 
 var KdTtl=aaMcCnt +azMcCnt +abMcCnt +aoMcCnt +zzMcCnt +zbMcCnt +zoMcCnt +baMcCnt +bzMcCnt +bbMcCnt +boMcCnt +obMcCnt +ooMcCnt +aaFcCnt +abFcCnt +baFcCnt +bbFcCnt +bzFcCnt +boFcCnt +zaFcCnt +zbFcCnt +zzFcCnt +oaFcCnt +obFcCnt +ozFcCnt +ooFcCnt;
 
@@ -11485,33 +11485,33 @@ FixRto=1;
 if (KdTtl > 5000) {FixRto=5000/KdTtl;}
 else if (KdTtl < 500) {StrtTtl=Math.min((1.1*sTtl.value),500); FixRto=Math.min(StrtTtl/KdTtl,2.5);}
 
-window.aaMcCnt=Rnd100ths(aaMcCnt*FixRto);
-window.azMcCnt=Rnd100ths(azMcCnt*FixRto);
-window.abMcCnt=Rnd100ths(abMcCnt*FixRto);
-window.aoMcCnt=Rnd100ths(aoMcCnt*FixRto);
-window.zzMcCnt=Rnd100ths(zzMcCnt*FixRto);
-window.zbMcCnt=Rnd100ths(zbMcCnt*FixRto);
-window.zoMcCnt=Rnd100ths(zoMcCnt*FixRto);
-window.baMcCnt=Rnd100ths(baMcCnt*FixRto);
-window.bzMcCnt=Rnd100ths(bzMcCnt*FixRto);
-window.bbMcCnt=Rnd100ths(bbMcCnt*FixRto);
-window.boMcCnt=Rnd100ths(boMcCnt*FixRto);
-window.obMcCnt=Rnd100ths(obMcCnt*FixRto);
-window.ooMcCnt=Rnd100ths(ooMcCnt*FixRto);
+window.aaMcCnt=Rnd1Ds(aaMcCnt*FixRto);
+window.azMcCnt=Rnd1Ds(azMcCnt*FixRto);
+window.abMcCnt=Rnd1Ds(abMcCnt*FixRto);
+window.aoMcCnt=Rnd1Ds(aoMcCnt*FixRto);
+window.zzMcCnt=Rnd1Ds(zzMcCnt*FixRto);
+window.zbMcCnt=Rnd1Ds(zbMcCnt*FixRto);
+window.zoMcCnt=Rnd1Ds(zoMcCnt*FixRto);
+window.baMcCnt=Rnd1Ds(baMcCnt*FixRto);
+window.bzMcCnt=Rnd1Ds(bzMcCnt*FixRto);
+window.bbMcCnt=Rnd1Ds(bbMcCnt*FixRto);
+window.boMcCnt=Rnd1Ds(boMcCnt*FixRto);
+window.obMcCnt=Rnd1Ds(obMcCnt*FixRto);
+window.ooMcCnt=Rnd1Ds(ooMcCnt*FixRto);
 
-window.aaFcCnt=Rnd100ths(aaFcCnt*FixRto);
-window.abFcCnt=Rnd100ths(abFcCnt*FixRto);
-window.baFcCnt=Rnd100ths(baFcCnt*FixRto);
-window.bbFcCnt=Rnd100ths(bbFcCnt*FixRto);
-window.bzFcCnt=Rnd100ths(bzFcCnt*FixRto);
-window.boFcCnt=Rnd100ths(boFcCnt*FixRto);
-window.zaFcCnt=Rnd100ths(zaFcCnt*FixRto);
-window.zbFcCnt=Rnd100ths(zbFcCnt*FixRto);
-window.zzFcCnt=Rnd100ths(zzFcCnt*FixRto);
-window.oaFcCnt=Rnd100ths(oaFcCnt*FixRto);
-window.obFcCnt=Rnd100ths(obFcCnt*FixRto);
-window.ozFcCnt=Rnd100ths(ozFcCnt*FixRto);
-window.ooFcCnt=Rnd100ths(ooFcCnt*FixRto);
+window.aaFcCnt=Rnd1Ds(aaFcCnt*FixRto);
+window.abFcCnt=Rnd1Ds(abFcCnt*FixRto);
+window.baFcCnt=Rnd1Ds(baFcCnt*FixRto);
+window.bbFcCnt=Rnd1Ds(bbFcCnt*FixRto);
+window.bzFcCnt=Rnd1Ds(bzFcCnt*FixRto);
+window.boFcCnt=Rnd1Ds(boFcCnt*FixRto);
+window.zaFcCnt=Rnd1Ds(zaFcCnt*FixRto);
+window.zbFcCnt=Rnd1Ds(zbFcCnt*FixRto);
+window.zzFcCnt=Rnd1Ds(zzFcCnt*FixRto);
+window.oaFcCnt=Rnd1Ds(oaFcCnt*FixRto);
+window.obFcCnt=Rnd1Ds(obFcCnt*FixRto);
+window.ozFcCnt=Rnd1Ds(ozFcCnt*FixRto);
+window.ooFcCnt=Rnd1Ds(ooFcCnt*FixRto);
 
 var RsltsClass=document.getElementsByClassName('Rslts')
 for (var i=0; i < RsltsClass.length; i++) {RsltsClass[i].removeAttribute('hidden');}
