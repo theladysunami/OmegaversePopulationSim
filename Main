@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h3>Starting Population:&emsp;<div style="float: inline-end;"><a href="http://ladysunamishadow.tumblr.com/OmegaverseSimInfo" target="_blank">Simulator Information</a></div></h3>
+<h3>Starting Population:</h3>
  <table>
   <tr class="Main">
     <td class="Main">🔴
@@ -197,11 +197,7 @@
     <td class="Main">Starting Total:</td>
 	<td><input type="text" id="sTtl" size="5" readonly />
 	<td class="Main"></td>
-	<td></td>
-	<td></td>
-	<td></td>
-	<td></td>
-	<td></td>
+	<td align="right" colspan="9"><b><a href="http://ladysunamishadow.tumblr.com/OmegaverseSimInfo" target="_blank">Simulator Information</a></b></td>
   </tr>
  </table></p>
 <details open><summary><b>Gene Options</b></summary>
@@ -329,11 +325,11 @@
 		<option value="Add">Addative</option>
 		<option value="Mult" selected>Multiplicative</option>
 	</select>&emsp;
-	<select id="CmptTst" onchange="CmptTstF()" onInput="this.onchange()";>
+	<select id="CmptTst" onchange="setFrtF()" onInput="this.onchange()";>
 		<option value="XXX" selected>Base Values</option>
 		<option value="Favor" title="Increases Fertility by 2.5% for A+O & B+B Pairs, Decreases A+B & O+B by 2.5%, and A+A & O+O by 5%">Favor 'Compatible'</option>
 		<option value="StrngFavor" title="Increases Fertility by 5% for A+O & B+B Pairs, Decreases A+B & O+B by 5%, and A+A & O+O by 10%">Strongly Favor 'Compatible'</option>
-		<option value="Cstm">Custom</option>
+		<option value="Cstm" title="Allows Editing of Fertility Table">Custom Values</option>
 	</select>&emsp;
 	<select id="PnnttSqChng" onchange="PntSqChF()" onInput="this.onchange()" title="Tweaks Punnett Square Result Percentages";>
 		<option value="XXX" selected>Follow Punnett Square Exactly</option>
@@ -380,55 +376,55 @@
         <td><input type="text" id="mOf2" size="8" placeholder="As Father" onChange="calcFrtF()" onInput="this.onchange();" title="As Father" /></td>
         <td></td>
         <td align="right" class="MA">Male Alpha</td>
-        <td><span id="mAfOfrt"><input type="text" id="mAfOf" size="8" readonly /></span></td>
-        <td><span id="mAfBfrt"><input type="text" id="mAfBf" size="8" readonly /></span></td>
-        <td><span id="mAfAfrt"><input type="text" id="mAfAf" size="8" readonly /></span></td>
-        <td><span id="mAmOfrt"><input type="text" id="mAmOf" size="8" readonly /></span></td>
-        <td class="ZGene" hidden><span id="mAfZfrt"><input type="text" id="mAfZf" size="8" readonly /></span></td>
+        <td><input type="text" id="mAfOf" class="ClcFrts" size="8" readonly /></td>
+        <td><input type="text" id="mAfBf" class="ClcFrts" size="8" readonly /></td>
+        <td><input type="text" id="mAfAf" class="ClcFrts" size="8" readonly /></td>
+        <td><input type="text" id="mAmOf" class="ClcFrts" size="8" readonly /></td>
+        <td class="ZGene" hidden><input type="text" id="mAfZf" class="ClcFrts" size="8" readonly /></td></td>
     </tr>
     <tr>
         <td></td>
         <td><input type="text" id="mOf1" size="8" placeholder="As Mother" onChange="calcFrtF()" onInput="this.onchange();" title="As Mother" /></td>
         <td></td>
         <td align="right" class="MB">Male Beta</td>
-        <td><span id="mBfOfrt"><input type="text" id="mBfOf" size="8" readonly /></span></td>
-        <td><span id="mBfBfrt"><input type="text" id="mBfBf" size="8" readonly /></span></td>
-        <td><span id="mBfAfrt"><input type="text" id="mBfAf" size="8" readonly /></span></td>
-        <td><span id="mBmOfrt"><input type="text" id="mBmOf" size="8" readonly /></span></td>
-        <td class="ZGene" hidden><span id="mBfZfrt"><input type="text" id="mBfZf" size="8" readonly /></span></td>
+        <td><input type="text" id="mBfOf" class="ClcFrts" size="8" readonly /></td>
+        <td><input type="text" id="mBfBf" class="ClcFrts" size="8" readonly /></td>
+        <td><input type="text" id="mBfAf" class="ClcFrts" size="8" readonly /></td>
+        <td><input type="text" id="mBmOf" class="ClcFrts" size="8" readonly /></td>
+        <td class="ZGene" hidden><input type="text" id="mBfZf" class="ClcFrts" size="8" readonly /></td></td>
     </tr>
     <tr>
         <td><span class="FA">Female Alpha</span> Fertility:</td>
         <td><input type="text" id="fAf1" size="8" placeholder="As Father" onChange="calcFrtF()" onInput="this.onchange();" title="As Father" /></td>
         <td></td>
         <td align="right" class="MO">Male Omega</td>
-        <td><span id="mOfOfrt"><input type="text" id="mOfOf" size="8" readonly /></span></td>
-        <td><span id="mOfBfrt"><input type="text" id="mOfBf" size="8" readonly /></span></td>
-        <td><span id="mOfAfrt"><input type="text" id="mOfAf" size="8" readonly /></span></td>
-        <td><span id="mOmOfrt"><input type="text" id="mOmOf" size="8" readonly /></span></td>
-        <td class="ZGene" hidden><span id="mOfZfrt"><input type="text" id="mOfZf" size="8" readonly /></span></td>
+        <td><input type="text" id="mOfOf" class="ClcFrts" size="8" readonly /></td>
+        <td><input type="text" id="mOfBf" class="ClcFrts" size="8" readonly /></td>
+        <td><input type="text" id="mOfAf" class="ClcFrts" size="8" readonly /></td>
+        <td><input type="text" id="mOmOf" class="ClcFrts" size="8" readonly /></td>
+        <td class="ZGene" hidden><input type="text" id="mOfZf" class="ClcFrts" size="8" readonly /></td></td>
     </tr>
     <tr>
         <td></td>
         <td><input type="text" id="fAf2" size="8" placeholder="As Mother" onChange="calcFrtF()" onInput="this.onchange();" title="As Mother" /></td>
         <td></td>
         <td align="right" class="FA">Female Alpha</td>
-        <td><span id="fAfOfrt"><input type="text" id="fAfOf" size="8" readonly /></span></td>
-        <td><span id="fAfBfrt"><input type="text" id="fAfBf" size="8" readonly /></span></td>
-        <td><span id="fAfAfrt"><input type="text" id="fAfAf" size="8" readonly /></span></td>
+        <td><input type="text" id="fAfOf" class="ClcFrts" size="8" readonly /></td>
+        <td><input type="text" id="fAfBf" class="ClcFrts" size="8" readonly /></td>
+        <td><input type="text" id="fAfAf" class="ClcFrts" size="8" readonly /></td>
         <td></td>
-        <td class="ZGene" hidden><span class="fAfZfrt"><input type="text" id="fAfZf" size="8" readonly /></span></td>
+        <td class="ZGene" hidden><input type="text" id="fAfZf" class="ClcFrts" size="8" readonly /></td></td>
     </tr>
     <tr>
         <td><span class="FB">Female Beta</span> Fertility:</td>
         <td><input type="text" id="fBf" size="8" placeholder="As Mother" onChange="calcFrtF()" onInput="this.onchange();" title="As Mother" /></td>
         <td></td>
         <td align="right" class="ZGene MZ" hidden>Male Z-Alpha</td>
-        <td class="ZGene" hidden><span id="mZfOfrt"><input type="text" id="mZfOf" size="8" readonly /></span></td>
-        <td class="ZGene" hidden><span id="mZfBfrt"><input type="text" id="mZfBf" size="8" readonly /></span></td>
-        <td class="ZGene" hidden><span id="mZfAfrt"><input type="text" id="mZfAf" size="8" readonly /></span></td>
-        <td class="ZGene" hidden><span id="mZmOfrt"><input type="text" id="mZmOf" size="8" readonly /></span></td>
-        <td class="ZGene" hidden><span id="mZfZfrt"><input type="text" id="mZfZf" size="8" readonly /></span></td>
+        <td class="ZGene" hidden><input type="text" id="mZfOf" class="ClcFrts" size="8" readonly /></td>
+        <td class="ZGene" hidden><input type="text" id="mZfBf" class="ClcFrts" size="8" readonly /></td>
+        <td class="ZGene" hidden><input type="text" id="mZfAf" class="ClcFrts" size="8" readonly /></td>
+        <td class="ZGene" hidden><input type="text" id="mZmOf" class="ClcFrts" size="8" readonly /></td>
+        <td class="ZGene" hidden><input type="text" id="mZfZf" class="ClcFrts" size="8" readonly /></td>
     </tr>
     <tr>
         <td><span class="FO">Female Omega</span> Fertility:</td>
@@ -475,7 +471,7 @@
     <option class="ZGene" value="OZ F" hidden>OZ F</option>
     <option value="OO F" selected>OO F</option></select>: <input id="oFadNm" type="number" step="5" value="" min="0" max="250" onChange="corChngF()">
 <p style="margin:0px"><button onclick="corDfltF()">Default Corrector Values</button></p></fieldset></details>
-<p style="margin:0px"><button onclick="defFertFunc()">Default Values</button>&emsp;<button onclick="clrFrtFnc()">Clear</button></fieldset>
+<p style="margin:0px"><button onclick="defFrtF()">Default Values</button>&emsp;<button onclick="clrFrtFnc()">Clear</button></fieldset>
 
 <div class="Rslts" hidden>
 <details open><summary><b>Result Details A</b></summary>
@@ -509,7 +505,7 @@
     <option value="GrpC4">Group C4</option>
     <option value="GrpD1">Group D1</option>
  </select>&emsp;<button onclick="clrR1f()">Clear</button>
- <table style="width:100%">
+ <table style="width:100%" title="Options Cannot be Selected this Round if Their Fertility is Below 1.25">
   <tr>
     <td><div><input type="checkbox" id="R1aMoF" onclick="R1CkBxFnctB()" /><label for="R1aMoF"><span class="MA">Male Alpha</span> + <span class="FO">Female Omega</span></label></div></td>
     <td><div><input type="checkbox" id="R1aMbF" onclick="R1CkBxFnctB()" /><label for="R1aMbF"><span class="MA">Male Alpha</span> + <span class="FB">Female Beta</span></label></div></td>
@@ -557,7 +553,7 @@
     <option value="GrpC4">Group C4</option>
     <option value="GrpD1">Group D1</option>
  </select>&emsp;<button onclick="clrR2f()">Clear</button>
- <table style="width:100%">
+ <table style="width:100%" title="Options Cannot be Selected this Round if Their Fertility is Below 1.125">
   <tr>
     <td><div><input type="checkbox" id="R2aMoF" onclick="R2CkBxFnctB()" /><label for="R2aMoF"><span class="MA">Male Alpha</span> + <span class="FO">Female Omega</span></label></div></td>
     <td><div><input type="checkbox" id="R2aMbF" onclick="R2CkBxFnctB()" /><label for="R2aMbF"><span class="MA">Male Alpha</span> + <span class="FB">Female Beta</span></label></div></td>
@@ -607,7 +603,7 @@
     <option value="GrpD2">Group D2</option>
     <option value="GrpD3">Group D3</option>
  </select>&emsp;<button onclick="clrR3f()">Clear</button>
- <table style="width:100%">
+ <table style="width:100%" title="Options Cannot be Selected this Round if Their Fertility is Below 1">
   <tr>
     <td><div><input type="checkbox" id="R3aMoF" onclick="R3CkBxFnctB()" /><label for="R3aMoF"><span class="MA">Male Alpha</span> + <span class="FO">Female Omega</span></label></div></td>
     <td><div><input type="checkbox" id="R3aMbF" onclick="R3CkBxFnctB()" /><label for="R3aMbF"><span class="MA">Male Alpha</span> + <span class="FB">Female Beta</span></label></div></td>
@@ -671,7 +667,7 @@
     <option value="GrpD2">Group D2</option>
     <option value="GrpD3">Group D3</option>
  </select>&emsp;<button onclick="clrR4f()">Clear</button>
- <table style="width:100%">
+ <table style="width:100%" title="Options Cannot be Selected this Round if Their Fertility is Below 0.875">
   <tr>
     <td><div><input type="checkbox" id="R4aMoF" onclick="R4CkBxFnctB()" /><label for="R4aMoF"><span class="MA">Male Alpha</span> + <span class="FO">Female Omega</span></label></div></td>
     <td><div><input type="checkbox" id="R4aMbF" onclick="R4CkBxFnctB()" /><label for="R4aMbF"><span class="MA">Male Alpha</span> + <span class="FB">Female Beta</span></label></div></td>
@@ -735,7 +731,7 @@
     <option value="GrpD2">Group D2</option>
     <option value="GrpD3">Group D3</option>
  </select>&emsp;<button onclick="clrR5f()">Clear</button>
- <table style="width:100%">
+ <table style="width:100%" title="Options Cannot be Selected this Round if Their Fertility is Below 0.75">
   <tr>
     <td><div><input type="checkbox" id="R5aMoF" onclick="R5CkBxFnctB()" /><label for="R5aMoF"><span class="MA">Male Alpha</span> + <span class="FO">Female Omega</span></label></div></td>
     <td><div><input type="checkbox" id="R5aMbF" onclick="R5CkBxFnctB()" /><label for="R5aMbF"><span class="MA">Male Alpha</span> + <span class="FB">Female Beta</span></label></div></td>
@@ -799,7 +795,7 @@
     <option value="GrpD2">Group D2</option>
     <option value="GrpD3">Group D3</option>
  </select>&emsp;<button onclick="clrR6f()">Clear</button>
- <table style="width:100%">
+ <table style="width:100%" title="Options Cannot be Selected this Round if Their Fertility is Below 0.625">
   <tr>
     <td><div><input type="checkbox" id="R6aMoF" onclick="R6CkBxFnctB()" /><label for="R6aMoF"><span class="MA">Male Alpha</span> + <span class="FO">Female Omega</span></label></div></td>
     <td><div><input type="checkbox" id="R6aMbF" onclick="R6CkBxFnctB()" /><label for="R6aMbF"><span class="MA">Male Alpha</span> + <span class="FB">Female Beta</span></label></div></td>
@@ -863,7 +859,7 @@
     <option value="GrpD2">Group D2</option>
     <option value="GrpD3">Group D3</option>
  </select>&emsp;<button onclick="clrR7f()">Clear</button>
- <table style="width:100%">
+ <table style="width:100%" title="Options Cannot be Selected this Round if Their Fertility is Below 0.5">
   <tr>
     <td><div><input type="checkbox" id="R7aMoF" onclick="R7CkBxFnctB()" /><label for="R7aMoF"><span class="MA">Male Alpha</span> + <span class="FO">Female Omega</span></label></div></td>
     <td><div><input type="checkbox" id="R7aMbF" onclick="R7CkBxFnctB()" /><label for="R7aMbF"><span class="MA">Male Alpha</span> + <span class="FB">Female Beta</span></label></div></td>
@@ -927,7 +923,7 @@
     <option value="GrpD2">Group D2</option>
     <option value="GrpD3">Group D3</option>
  </select>&emsp;<button onclick="clrR8f()">Clear</button>
- <table style="width:100%">
+ <table style="width:100%" title="Options Cannot be Selected this Round if Their Fertility is Below 0.375">
   <tr>
     <td><div><input type="checkbox" id="R8aMoF" onclick="R8CkBxFnctB()" /><label for="R8aMoF"><span class="MA">Male Alpha</span> + <span class="FO">Female Omega</span></label></div></td>
     <td><div><input type="checkbox" id="R8aMbF" onclick="R8CkBxFnctB()" /><label for="R8aMbF"><span class="MA">Male Alpha</span> + <span class="FB">Female Beta</span></label></div></td>
@@ -991,7 +987,7 @@
     <option value="GrpD2">Group D2</option>
     <option value="GrpD3">Group D3</option>
  </select>&emsp;<button onclick="clrR9f()">Clear</button>
- <table style="width:100%">
+ <table style="width:100%" title="Options Cannot be Selected this Round if Their Fertility is Below 0.25">
   <tr>
     <td><div><input type="checkbox" id="R9aMoF" onclick="R9CkBxFnctB()" /><label for="R9aMoF"><span class="MA">Male Alpha</span> + <span class="FO">Female Omega</span></label></div></td>
     <td><div><input type="checkbox" id="R9aMbF" onclick="R9CkBxFnctB()" /><label for="R9aMbF"><span class="MA">Male Alpha</span> + <span class="FB">Female Beta</span></label></div></td>
@@ -1018,7 +1014,7 @@
     <td><div><input type="checkbox" id="R9oMoM" onclick="R9CkBxFnctB()" /><label for="R9oMoM"><span class="MO">Male Omega</span></label> + <span class="MO">Male Omega</span></label></div></td>
   </tr>
  </table>
- <table style="width:100%">
+ <table style="width:100%" style="width:100%" title="Options Cannot be Selected this Round if Their Fertility is 0">
   <tr>
     <td style="width: 10%;"></td>
     <td><div><input type="checkbox" id="R9oaFoF" onclick="R9CkBxFnctB()" /><label for="R9oaFoF"><span class="FA">Female Alpha</span> <small>(<span class="FO">Ex-Omega</span>)</small> + <span class="FO">Female Omega</span></label></div></td>
@@ -1114,7 +1110,6 @@ td	{white-space: nowrap; min-width: 5px;}
 	.FZ	{color: #693ABB;}
 	.FO	{color: DarkOrchid;}
 fieldset.Optns {padding:5px;}
-fieldset.Clck {padding:2px 0px; display:inline;}
 fieldset.PntSqChs {padding:0px; margin:5px 0px;}
 </style>
 
@@ -1132,13 +1127,14 @@ NoZRndCnt=0;
 strtA=false; strtB=false; strtO=false;
 strtY=false; strtZ=false;
 
-PairRsltsString=""; IncRndCnt=false;
-CrctrChng=false; RRls="InclR";
+PairRsltsString=""; RRls="InclR"; 
+IncRndCnt=false; CrctrChng=false;
 BdomCstm=false; ZdomCstm=false;
+FrtDflt=false; PssblLagOk=false;
 R1Cstm=false; R2Cstm=false; R3Cstm=false; 
 R4Cstm=false; R5Cstm=false; R6Cstm=false;
 R7Cstm=false; R8Cstm=false; R9Cstm=false;
-RXCstm=false; PssblLagOk=false;
+RXCstm=false;
 
 //////////
 //////////
@@ -1211,11 +1207,12 @@ if (sOOfCnt > 0 && sOOf.disabled==false) {document.getElementById("sOOf").value=
 }
 
 function MtchCnt(Input,RegEx) {Rslt=((Input.toString()).match(RegEx) || []).length || 0; return Rslt;}
+function MinMax(Val,Min,Max) {Rslt=Math.min(Math.max(Val,Min),Max); return Rslt;}
 
-function PrcFnc1(NmbrVal,TtlVal) {PrcntVal=Rnd100ths((NmbrVal/TtlVal)*10000)/100; return PrcntVal || 0;}
-function PrcFnc2(NmbrVal,TtlVal) {PrcntVal=Rnd100ths((NmbrVal/TtlVal)*1000)/10; return PrcntVal || 0;}
+function PrcFnc1(NmbrVal,TtlVal) {PrcntVal=Rnd1Ds((NmbrVal/TtlVal)*10000)/100; return PrcntVal || 0;}
+function PrcFnc2(NmbrVal,TtlVal) {PrcntVal=Rnd1Ds((NmbrVal/TtlVal)*1000)/10; return PrcntVal || 0;}
 
-function Rnd100ths(NmbrVal) {NewVal=Math.round(NmbrVal); return NewVal;}
+function Rnd1Ds(NmbrVal) {NewVal=Math.round(NmbrVal); return NewVal;}
 function Rnd10ths(NmbrVal) {NewVal=Math.round((NmbrVal)*10)/10; return NewVal;}
 function Rnd100ths(NmbrVal) {NewVal=Math.round((NmbrVal)*100)/100; return NewVal;}
 function Rnd1000ths(NmbrVal) {NewVal=Math.round((NmbrVal)*1000)/1000; return NewVal;}
@@ -1235,7 +1232,7 @@ function OneDgtF(Strng) {Strng=Strng.toString().replace(/^\d\b/,'&ensp;$&').repl
 
 function QfPrc(NmbrVal,TtlVal) {Strng=OneDgtF(OneDcmlF(PrcFnc2(NmbrVal,TtlVal))); return Strng;}
 
-function ColorFnc(Strng) {Strng=Strng.replace(/(All )?Male Alpha/g,'<span class="MA">$&</span>').replace(/(All )?Male Beta/g,'<span class="MB">$&</span>').replace(/(All )?Male Omega/g,'<span class="MO">$&</span>').replace(/(All )?Female Alpha/g,'<span class="FA">$&</span>').replace(/(All )?Female Beta/g,'<span class="FB">$&</span>').replace(/(All )?Female Omega/g,'<span class="FO">$&</span>'); return Strng;}
+function ColorFnc(Strng) {Strng=Strng.replace(/(All )?Male Alpha/g,'<span class="MA">$&</span>').replace(/(All )?Male Beta/g,'<span class="MB">$&</span>').replace(/(All )?Male Omega/g,'<span class="MO">$&</span>').replace(/(All )?Female Alpha/g,'<span class="FA">$&</span>').replace(/(All )?Female Beta/g,'<span class="FB">$&</span>').replace(/(All )?Female Omega/g,'<span class="FO">$&</span>').replace(/%\s*(&\w+;)*\s*<span style/g,'% <span style'); return Strng;}
 
 function BdomFncA() {
 mBdom=BdomM.value;
@@ -1259,8 +1256,10 @@ document.getElementById("ZdomM").value="RecZM";}
 if (/FlipBM|CstmBM/.test(mBdom)) 
 {sBAm_dsbld=false; sABm_dsbld=false;
 bMaddBA_dsbld=false; aMaddAB_dsbld=false;
-if (ZdomM.value=="DomZM") {document.getElementById("ZdomM").value="FlipZM";}
+if (mBdom=="FlipBM") 
+{if (ZdomM.value=="DomZM") {document.getElementById("ZdomM").value="FlipZM";}
 DomZM_dsbld=true; FlipZM_dsbld=false;}
+else {DomZM_dsbld=false; FlipZM_dsbld=false;}}
 
 if (mBdom=="RecBM") 
 {sBAmCnt=0; sABmCnt=sBthBmCnt;
@@ -1303,8 +1302,10 @@ document.getElementById("ZdomF").value="RecZF";}
 if (/FlipBF|CstmBF/.test(fBdom)) 
 {sBOf_dsbld=false; sOBf_dsbld=false;
 bFaddBO_dsbld=false; oFaddOB_dsbld=false;
-if (ZdomF.value=="DomZF") {document.getElementById("ZdomF").value="FlipZF";}
+if (fBdom=="FlipBF") 
+{if (ZdomF.value=="DomZF") {document.getElementById("ZdomF").value="FlipZF";}
 DomZF_dsbld=true; FlipZF_dsbld=false;}
+else {DomZF_dsbld=false; FlipZF_dsbld=false;}}
 
 if (fBdom=="RecBF") 
 {sBOfCnt=0; sOBfCnt=sBthBfCnt;
@@ -1415,19 +1416,19 @@ StrtValSetFunc();
 function BdomFncB() {BdomFncA();
 sBthBmCnt=sABmCnt+sBAmCnt;
 if (/FlipBM|CstmBM/.test(mBdom)) 
-{sBAmCnt=sABmCnt=Rnd100ths(sBthBmCnt/2);}
+{sBAmCnt=sABmCnt=Rnd1Ds(sBthBmCnt/2);}
 
 sBthBfCnt=sBOfCnt+sOBfCnt;
 if (/FlipBF|CstmBF/.test(fBdom)) 
-{sBOfCnt=sOBfCnt=Rnd100ths(sBthBfCnt/2);}
+{sBOfCnt=sOBfCnt=Rnd1Ds(sBthBfCnt/2);}
 
 sBthOmCnt=sOBmCnt+sBOmCnt;
 if (/FlipOM|CstmOM/.test(mOdom)) 
-{sOBmCnt=sBOmCnt=Rnd100ths(sBthOmCnt/2);}
+{sOBmCnt=sBOmCnt=Rnd1Ds(sBthOmCnt/2);}
 
 sBthAfCnt=sABfCnt+sBAfCnt;
 if (/FlipAF|CstmAF/.test(fAdom)) 
-{sABfCnt=sBAfCnt=Rnd100ths(sBthAfCnt/2);}
+{sABfCnt=sBAfCnt=Rnd1Ds(sBthAfCnt/2);}
 
 crrctrResetFncB();
 StrtValSetFunc();
@@ -1448,15 +1449,15 @@ document.getElementById("fBAr").value=(Number(fBAr.value) || 9);}
 
 function ZCntFnc() {StrtCntF();
 
-sAAmPlsZCnt=Rnd100ths(sAAmCnt +sAZmCnt +(sZZmCnt/2));
-sABmPlsZCnt=Rnd100ths(sABmCnt +sZBmCnt);
-sAOmPlsZCnt=Rnd100ths(sAOmCnt +sZOmCnt +(sZZmCnt/2));
-sBBmPlsZCnt=Rnd100ths(sBBmCnt +sBZmCnt);
+sAAmPlsZCnt=Rnd1Ds(sAAmCnt +sAZmCnt +(sZZmCnt/2));
+sABmPlsZCnt=Rnd1Ds(sABmCnt +sZBmCnt);
+sAOmPlsZCnt=Rnd1Ds(sAOmCnt +sZOmCnt +(sZZmCnt/2));
+sBBmPlsZCnt=Rnd1Ds(sBBmCnt +sBZmCnt);
 
-sOOfPlsZCnt=Rnd100ths(sOOfCnt +sOZfCnt +(sZZfCnt/2));
-sOBfPlsZCnt=Rnd100ths(sOBfCnt +sZBfCnt);
-sOAfPlsZCnt=Rnd100ths(sOAfCnt +sZAfCnt +(sZZfCnt/2));
-sBBfPlsZCnt=Rnd100ths(sBBfCnt +sBZfCnt);}
+sOOfPlsZCnt=Rnd1Ds(sOOfCnt +sOZfCnt +(sZZfCnt/2));
+sOBfPlsZCnt=Rnd1Ds(sOBfCnt +sZBfCnt);
+sOAfPlsZCnt=Rnd1Ds(sOAfCnt +sZAfCnt +(sZZfCnt/2));
+sBBfPlsZCnt=Rnd1Ds(sBBfCnt +sBZfCnt);}
 
 function GeneSlctFncA() {
 GeneSlctVal=GeneSelect.value;
@@ -1562,10 +1563,10 @@ StrtValSetFunc();
 
 function GeneSlctFncB() {GeneSlctFncA();
 if (GeneSlctVal=="ZGene")
-{if (sAAmPlsZCnt==sAAmCnt) {sAAmCnt=sAZmCnt=Rnd100ths(sAAmCnt/2);}
-if (sAOmPlsZCnt==sAOmCnt) {sAOmCnt=sZOmCnt=Rnd100ths(sAOmCnt/2);}
-if (sOOfPlsZCnt==sOOfCnt) {sOOfCnt=sOZfCnt=Rnd100ths(sOOfCnt/2);}
-if (sOAfPlsZCnt==sOAfCnt) {sOAfCnt=sZAfCnt=Rnd100ths(sOAfCnt/2);}
+{if (sAAmPlsZCnt==sAAmCnt) {sAAmCnt=sAZmCnt=Rnd1Ds(sAAmCnt/2);}
+if (sAOmPlsZCnt==sAOmCnt) {sAOmCnt=sZOmCnt=Rnd1Ds(sAOmCnt/2);}
+if (sOOfPlsZCnt==sOOfCnt) {sOOfCnt=sOZfCnt=Rnd1Ds(sOOfCnt/2);}
+if (sOAfPlsZCnt==sOAfCnt) {sOAfCnt=sZAfCnt=Rnd1Ds(sOAfCnt/2);}
 StrtValSetFunc();
 
 mBdom=BdomM.value;
@@ -1580,15 +1581,6 @@ PntSqDblVal=PnnttSqDbl.value;
 if (ZdomCstm!=true)
 {if (PnnttSqChng.value=="XXX") 
 {document.getElementById("PnnttSqChng").value="PntSqCh"; PntSqChF();}
-
-if (mBdom=="CstmBM") {if (mBArP.value>=90) {mBdom="DomBM";}
-else if (mABrP.value>=90) {mBdom="RecBM";}}
-if (fBdom=="CstmBF") {if (fBOrP.value>=90) {fBdom="DomBF";}
-else if (fOBrP.value>=90) {fBdom="RecBF";}}
-if (mOdom=="CstmOM") {if (mBOrP.value>=90) {mOdom="RecOM";}
-else if (mOBrP.value>=90) {mOdom="DomOM";}}
-if (fAdom=="CstmAF") {if (fBArP.value>=90) {fAdom="RecAF";}
-else if (fABrP.value>=90) {fAdom="DomAF";}}
 
 if (mBdom=="RecBM" && fBdom=="RecBF" && mOdom=="RecOM" && fAdom=="RecAF") {ZfrtVal="FfthAFrFfthB"; ZdomFVal="DomZF"; ZdomMVal="DomZM"; PntSqAVal="XXX"; PntSqBVal="FvrB10"; PntSqDblVal="XXX";} else {ZdomFVal="RecZF"; ZdomMVal="RecZM";}
 if (mBdom=="RecBM" && fBdom=="RecBF" && mOdom=="DomOM" && fAdom=="DomAF") {ZfrtVal="ThrdATwThrdB"; ZdomFVal="RecZF"; ZdomMVal="RecZM"; PntSqAVal="XXX"; PntSqBVal="FvrB10"; PntSqDblVal="XXX";}
@@ -1672,7 +1664,7 @@ RandOfC=sZZfCnt +sZAfCnt +sZBfCnt +sOAfCnt +sOBfCnt +sOZfCnt +sOOfCnt;
 RandMc=RandAmC +RandBmC +RandOmC;
 RandFc=RandAfC +RandBfC +RandOfC;
 
-RandMoF=(Rnd100ths((RandMc/RandFc +1)*100)/200 || 1);
+RandMoF=(Rnd1Ds((RandMc/RandFc +1)*100)/200 || 1);
 
 sAAfCnt=Math.floor(sAAfCnt*RandMoF); sABfCnt=Math.floor(sABfCnt*RandMoF); 
 sBAfCnt=Math.floor(sBAfCnt*RandMoF); sBBfCnt=Math.floor(sBBfCnt*RandMoF);
@@ -1686,7 +1678,7 @@ StrtValSetFunc();
 BdomFncA(); GeneSlctFncA(); 
 StrtPrcF();
 
-if (mAf.value=="" && mBf.value=="" && mOf2.value=="" && mOf1.value=="" && fAf1.value=="" && fAf2.value=="" && fBf.value=="" && fOf.value=="") {defFertFunc();}
+if (mAf.value=="" && mBf.value=="" && mOf2.value=="" && mOf1.value=="" && fAf1.value=="" && fAf2.value=="" && fBf.value=="" && fOf.value=="") {defFrtF();}
 
 randRulesChkFunc();}
 
@@ -2001,7 +1993,7 @@ document.getElementById("aFadNm").value='';
 document.getElementById("bFadNm").value='';
 document.getElementById("oFadNm").value='';}
 
-function defFertFunc() {
+function defFrtF() {
 FertTypeVal=document.getElementById("FertType").value;
 
 if (FertTypeVal=="Add")
@@ -2035,142 +2027,10 @@ document.getElementById("fAf2").value=fAfrt2; // Female Alpha Fertility: As Moth
 document.getElementById("fBf").value=fBfrt; // Female Beta Fertility
 document.getElementById("fOf").value=fOfrt; // Female Omega Fertility
 
+FrtDflt=true;
 calcFrtF();}
 
-function CmptTstF() {
-if (CmptTst.value=="Cstm") {
-mAfOfrt_val="<fieldset class='Clck'><input type='checkbox' id='mAfOfCI' class='CstmFrt' onChange='clkFrtIF()'>↑ <input type='text' id='mAfOf' size='8' readonly /> ↓<input type='checkbox' id='mAfOfCD' class='CstmFrt' onChange='clkFrtDF()'></fieldset>";
-mAfBfrt_val="<fieldset class='Clck'><input type='checkbox' id='mAfBfCI' class='CstmFrt' onChange='clkFrtIF()'>↑ <input type='text' id='mAfBf' size='8' readonly /> ↓<input type='checkbox' id='mAfBfCD' class='CstmFrt' onChange='clkFrtDF()'></fieldset>";
-mAfAfrt_val="<fieldset class='Clck'><input type='checkbox' id='mAfAfCI' class='CstmFrt' onChange='clkFrtIF()'>↑ <input type='text' id='mAfAf' size='8' readonly /> ↓<input type='checkbox' id='mAfAfCD' class='CstmFrt' onChange='clkFrtDF()'></fieldset>";
-mAmOfrt_val="<fieldset class='Clck'><input type='checkbox' id='mAmOfCI' class='CstmFrt' onChange='clkFrtIF()'>↑ <input type='text' id='mAmOf' size='8' readonly /> ↓<input type='checkbox' id='mAmOfCD' class='CstmFrt' onChange='clkFrtDF()'></fieldset>";
-mAfZfrt_val="<fieldset class='Clck'><input type='checkbox' id='mAfZfCI' class='CstmFrt' onChange='clkFrtIF()'>↑ <input type='text' id='mAfZf' size='8' readonly /> ↓<input type='checkbox' id='mAfZfCD' class='CstmFrt' onChange='clkFrtDF()'></fieldset>";
-mBfOfrt_val="<fieldset class='Clck'><input type='checkbox' id='mBfOfCI' class='CstmFrt' onChange='clkFrtIF()'>↑ <input type='text' id='mBfOf' size='8' readonly /> ↓<input type='checkbox' id='mBfOfCD' class='CstmFrt' onChange='clkFrtDF()'></fieldset>";
-mBfBfrt_val="<fieldset class='Clck'><input type='checkbox' id='mBfBfCI' class='CstmFrt' onChange='clkFrtIF()'>↑ <input type='text' id='mBfBf' size='8' readonly /> ↓<input type='checkbox' id='mBfBfCD' class='CstmFrt' onChange='clkFrtDF()'></fieldset>";
-mBfAfrt_val="<fieldset class='Clck'><input type='checkbox' id='mBfAfCI' class='CstmFrt' onChange='clkFrtIF()'>↑ <input type='text' id='mBfAf' size='8' readonly /> ↓<input type='checkbox' id='mBfAfCD' class='CstmFrt' onChange='clkFrtDF()'></fieldset>";
-mBmOfrt_val="<fieldset class='Clck'><input type='checkbox' id='mBmOfCI' class='CstmFrt' onChange='clkFrtIF()'>↑ <input type='text' id='mBmOf' size='8' readonly /> ↓<input type='checkbox' id='mBmOfCD' class='CstmFrt' onChange='clkFrtDF()'></fieldset>";
-mBfZfrt_val="<fieldset class='Clck'><input type='checkbox' id='mBfZfCI' class='CstmFrt' onChange='clkFrtDF()'>↑ <input type='text' id='mBfZf' size='8' readonly /> ↓<input type='checkbox' id='mBfZfCD' class='CstmFrt' onChange='clkFrtDF()'></fieldset>";
-mOfOfrt_val="<fieldset class='Clck'><input type='checkbox' id='mOfOfCI' class='CstmFrt' onChange='clkFrtIF()'>↑ <input type='text' id='mOfOf' size='8' readonly /> ↓<input type='checkbox' id='mOfOfCD' class='CstmFrt' onChange='clkFrtDF()'></fieldset>";
-mOfBfrt_val="<fieldset class='Clck'><input type='checkbox' id='mOfBfCI' class='CstmFrt' onChange='clkFrtIF()'>↑ <input type='text' id='mOfBf' size='8' readonly /> ↓<input type='checkbox' id='mOfBfCD' class='CstmFrt' onChange='clkFrtDF()'></fieldset>";
-mOfAfrt_val="<fieldset class='Clck'><input type='checkbox' id='mOfAfCI' class='CstmFrt' onChange='clkFrtIF()'>↑ <input type='text' id='mOfAf' size='8' readonly /> ↓<input type='checkbox' id='mOfAfCD' class='CstmFrt' onChange='clkFrtDF()'></fieldset>";
-mOmOfrt_val="<fieldset class='Clck'><input type='checkbox' id='mOmOfCI' class='CstmFrt' onChange='clkFrtIF()'>↑ <input type='text' id='mOmOf' size='8' readonly /> ↓<input type='checkbox' id='mOmOfCD' class='CstmFrt' onChange='clkFrtDF()'></fieldset>";
-mOfZfrt_val="<fieldset class='Clck'><input type='checkbox' id='mOfZfCI' class='CstmFrt' onChange='clkFrtIF()'>↑ <input type='text' id='mOfZf' size='8' readonly /> ↓<input type='checkbox' id='mOfZfCD' class='CstmFrt' onChange='clkFrtDF()'></fieldset>";
-fAfOfrt_val="<fieldset class='Clck'><input type='checkbox' id='fAfOfCI' class='CstmFrt' onChange='clkFrtIF()'>↑ <input type='text' id='fAfOf' size='8' readonly /> ↓<input type='checkbox' id='fAfOfCD' class='CstmFrt' onChange='clkFrtDF()'></fieldset>";
-fAfBfrt_val="<fieldset class='Clck'><input type='checkbox' id='fAfBfCI' class='CstmFrt' onChange='clkFrtIF()'>↑ <input type='text' id='fAfBf' size='8' readonly /> ↓<input type='checkbox' id='fAfBfCD' class='CstmFrt' onChange='clkFrtDF()'></fieldset>";
-fAfAfrt_val="<fieldset class='Clck'><input type='checkbox' id='fAfAfCI' class='CstmFrt' onChange='clkFrtIF()'>↑ <input type='text' id='fAfAf' size='8' readonly /> ↓<input type='checkbox' id='fAfAfCD' class='CstmFrt' onChange='clkFrtDF()'></fieldset>";
-mZfOfrt_val="<fieldset class='Clck'><input type='checkbox' id='mZfOfCI' class='CstmFrt' onChange='clkFrtIF()'>↑ <input type='text' id='mZfOf' size='8' readonly /> ↓<input type='checkbox' id='mZfOfCD' class='CstmFrt' onChange='clkFrtDF()'></fieldset>";
-mZfBfrt_val="<fieldset class='Clck'><input type='checkbox' id='mZfBfCI' class='CstmFrt' onChange='clkFrtIF()'>↑ <input type='text' id='mZfBf' size='8' readonly /> ↓<input type='checkbox' id='mZfBfCD' class='CstmFrt' onChange='clkFrtDF()'></fieldset>";
-mZfAfrt_val="<fieldset class='Clck'><input type='checkbox' id='mZfAfCI' class='CstmFrt' onChange='clkFrtIF()'>↑ <input type='text' id='mZfAf' size='8' readonly /> ↓<input type='checkbox' id='mZfAfCD' class='CstmFrt' onChange='clkFrtDF()'></fieldset>";
-mZmOfrt_val="<fieldset class='Clck'><input type='checkbox' id='mZmOfCI' class='CstmFrt' onChange='clkFrtIF()'>↑ <input type='text' id='mZmOf' size='8' readonly /> ↓<input type='checkbox' id='mZmOfCD' class='CstmFrt' onChange='clkFrtDF()'></fieldset>";
-mZfZfrt_val="<fieldset class='Clck'><input type='checkbox' id='mZfZfCI' class='CstmFrt' onChange='clkFrtIF()'>↑ <input type='text' id='mZfZf' size='8' readonly /> ↓<input type='checkbox' id='mZfZfCD' class='CstmFrt' onChange='clkFrtDF()'></fieldset>";}
-else {mAfOfrt_val="<input type='checkbox' id='mAfOfCD' class='CstmFrt' onChange='clkFrtDF()'>";
-mAfOfrt_val="<input type='text' id='mAfOf' size='8' readonly />";
-mAfBfrt_val="<input type='text' id='mAfBf' size='8' readonly />";
-mAfAfrt_val="<input type='text' id='mAfAf' size='8' readonly />";
-mAmOfrt_val="<input type='text' id='mAmOf' size='8' readonly />";
-mAfZfrt_val="<input type='text' id='mAfZf' size='8' readonly />";
-mBfOfrt_val="<input type='text' id='mBfOf' size='8' readonly />";
-mBfBfrt_val="<input type='text' id='mBfBf' size='8' readonly />";
-mBfAfrt_val="<input type='text' id='mBfAf' size='8' readonly />";
-mBmOfrt_val="<input type='text' id='mBmOf' size='8' readonly />";
-mBfZfrt_val="<input type='text' id='mBfZf' size='8' readonly />";
-mOfOfrt_val="<input type='text' id='mOfOf' size='8' readonly />";
-mOfBfrt_val="<input type='text' id='mOfBf' size='8' readonly />";
-mOfAfrt_val="<input type='text' id='mOfAf' size='8' readonly />";
-mOmOfrt_val="<input type='text' id='mOmOf' size='8' readonly />";
-mOfZfrt_val="<input type='text' id='mOfZf' size='8' readonly />";
-fAfOfrt_val="<input type='text' id='fAfOf' size='8' readonly />";
-fAfBfrt_val="<input type='text' id='fAfBf' size='8' readonly />";
-fAfAfrt_val="<input type='text' id='fAfAf' size='8' readonly />";
-mZfOfrt_val="<input type='text' id='mZfOf' size='8' readonly />";
-mZfBfrt_val="<input type='text' id='mZfBf' size='8' readonly />";
-mZfAfrt_val="<input type='text' id='mZfAf' size='8' readonly />";
-mZmOfrt_val="<input type='text' id='mZmOf' size='8' readonly />";
-mZfZfrt_val="<input type='text' id='mZfZf' size='8' readonly />";}
-
-document.getElementById("mAfOfrt").innerHTML=mAfOfrt_val;
-document.getElementById("mAfBfrt").innerHTML=mAfBfrt_val;
-document.getElementById("mAfAfrt").innerHTML=mAfAfrt_val;
-document.getElementById("mAmOfrt").innerHTML=mAmOfrt_val;
-document.getElementById("mAfZfrt").innerHTML=mAfZfrt_val;
-document.getElementById("mBfOfrt").innerHTML=mBfOfrt_val;
-document.getElementById("mBfBfrt").innerHTML=mBfBfrt_val;
-document.getElementById("mBfAfrt").innerHTML=mBfAfrt_val;
-document.getElementById("mBmOfrt").innerHTML=mBmOfrt_val;
-document.getElementById("mBfZfrt").innerHTML=mBfZfrt_val;
-document.getElementById("mOfOfrt").innerHTML=mOfOfrt_val;
-document.getElementById("mOfBfrt").innerHTML=mOfBfrt_val;
-document.getElementById("mOfAfrt").innerHTML=mOfAfrt_val;
-document.getElementById("mOmOfrt").innerHTML=mOmOfrt_val;
-document.getElementById("mOfZfrt").innerHTML=mOfZfrt_val;
-document.getElementById("fAfOfrt").innerHTML=fAfOfrt_val;
-document.getElementById("fAfBfrt").innerHTML=fAfBfrt_val;
-document.getElementById("fAfAfrt").innerHTML=fAfAfrt_val;
-document.getElementById("mZfOfrt").innerHTML=mZfOfrt_val;
-document.getElementById("mZfBfrt").innerHTML=mZfBfrt_val;
-document.getElementById("mZfAfrt").innerHTML=mZfAfrt_val;
-document.getElementById("mZmOfrt").innerHTML=mZmOfrt_val;
-document.getElementById("mZfZfrt").innerHTML=mZfZfrt_val;
-calcFrtF();
-}
-
-function clkFrtDF() {if (mAfOfCD.checked) {document.getElementById("mAfOfCI").checked=false;}
-if (mAfBfCD.checked) {document.getElementById("mAfBfCI").checked=false;}
-if (mAfAfCD.checked) {document.getElementById("mAfAfCI").checked=false;}
-if (mAmOfCD.checked) {document.getElementById("mAmOfCI").checked=false;}
-if (mAfZfCD.checked) {document.getElementById("mAfZfCI").checked=false;}
-
-if (mBfOfCD.checked) {document.getElementById("mBfOfCI").checked=false;}
-if (mBfBfCD.checked) {document.getElementById("mBfBfCI").checked=false;}
-if (mBfAfCD.checked) {document.getElementById("mBfAfCI").checked=false;}
-if (mBmOfCD.checked) {document.getElementById("mBmOfCI").checked=false;}
-if (mBfZfCD.checked) {document.getElementById("mBfZfCI").checked=false;}
-
-if (mOfOfCD.checked) {document.getElementById("mOfOfCI").checked=false;}
-if (mOfBfCD.checked) {document.getElementById("mOfBfCI").checked=false;}
-if (mOfAfCD.checked) {document.getElementById("mOfAfCI").checked=false;}
-if (mOmOfCD.checked) {document.getElementById("mOmOfCI").checked=false;}
-if (mOfZfCD.checked) {document.getElementById("mOfZfCI").checked=false;}
-
-if (fAfOfCD.checked) {document.getElementById("fAfOfCI").checked=false;}
-if (fAfBfCD.checked) {document.getElementById("fAfBfCI").checked=false;}
-if (fAfAfCD.checked) {document.getElementById("fAfAfCI").checked=false;}
-if (fAfZfCD.checked) {document.getElementById("fAfZfCI").checked=false;}
-
-if (mZfOfCD.checked) {document.getElementById("mZfOfCI").checked=false;}
-if (mZfBfCD.checked) {document.getElementById("mZfBfCI").checked=false;}
-if (mZfAfCD.checked) {document.getElementById("mZfAfCI").checked=false;}
-if (mZmOfCD.checked) {document.getElementById("mZmOfCI").checked=false;}
-if (mZfZfCD.checked) {document.getElementById("mZfZfCI").checked=false;}
-calcFrtF();}
-
-function clkFrtIF() {if (mAfOfCI.checked) {document.getElementById("mAfOfCD").checked=false;}
-if (mAfBfCI.checked) {document.getElementById("mAfBfCD").checked=false;}
-if (mAfAfCI.checked) {document.getElementById("mAfAfCD").checked=false;}
-if (mAmOfCI.checked) {document.getElementById("mAmOfCD").checked=false;}
-if (mAfZfCI.checked) {document.getElementById("mAfZfCD").checked=false;}
-
-if (mBfOfCI.checked) {document.getElementById("mBfOfCD").checked=false;}
-if (mBfBfCI.checked) {document.getElementById("mBfBfCD").checked=false;}
-if (mBfAfCI.checked) {document.getElementById("mBfAfCD").checked=false;}
-if (mBmOfCI.checked) {document.getElementById("mBmOfCD").checked=false;}
-if (mBfZfCI.checked) {document.getElementById("mBfZfCD").checked=false;}
-
-if (mOfOfCI.checked) {document.getElementById("mOfOfCD").checked=false;}
-if (mOfBfCI.checked) {document.getElementById("mOfBfCD").checked=false;}
-if (mOfAfCI.checked) {document.getElementById("mOfAfCD").checked=false;}
-if (mOmOfCI.checked) {document.getElementById("mOmOfCD").checked=false;}
-if (mOfZfCI.checked) {document.getElementById("mOfZfCD").checked=false;}
-
-if (fAfOfCI.checked) {document.getElementById("fAfOfCD").checked=false;}
-if (fAfBfCI.checked) {document.getElementById("fAfBfCD").checked=false;}
-if (fAfAfCI.checked) {document.getElementById("fAfAfCD").checked=false;}
-if (fAfZfCI.checked) {document.getElementById("fAfZfCD").checked=false;}
-
-if (mZfOfCI.checked) {document.getElementById("mZfOfCD").checked=false;}
-if (mZfBfCI.checked) {document.getElementById("mZfBfCD").checked=false;}
-if (mZfAfCI.checked) {document.getElementById("mZfAfCD").checked=false;}
-if (mZmOfCI.checked) {document.getElementById("mZmOfCD").checked=false;}
-if (mZfZfCI.checked) {document.getElementById("mZfZfCD").checked=false;}
+function setFrtF() {if (mAf.value=="" && mBf.value=="" && mOf2.value=="" && mOf1.value=="" && fAf1.value=="" && fAf2.value=="" && fBf.value=="" && fOf.value=="") {defFrtF();}
 calcFrtF();}
 
 function calcFrtF() {
@@ -2285,44 +2145,29 @@ IaFoFfrt=aFoFfrt; IaFbFfrt=aFbFfrt; IaFaFfrt=aFaFfrt;
 IaMoMfrt=aMoMfrt; IbMoMfrt=bMoMfrt; IoMoMfrt=oMoMfrt;
 
 if (CmptTst.value=="Cstm") {
-var FrtCtmClss=document.getElementsByClassName('Frt')
-for (var i=0; i < FrtCtmClss.length; i++) {FrtCtmClss[i].removeAttribute('hidden');}
-
-if (mAfOfCI.checked) {aMoFfrt=IaMoFfrt*1.05;} else if (mAfOfCD.checked) {aMoFfrt=IaMoFfrt*0.975;}
-if (mAfBfCI.checked) {aMbFfrt=IaMbFfrt*1.025;} else if (mAfBfCD.checked) {aMbFfrt=IaMbFfrt*0.95;}
-if (mAfAfCI.checked) {aMaFfrt=IaMaFfrt*1.025;} else if (mAfAfCD.checked) {aMaFfrt=IaMaFfrt*0.9;}
-if (mAmOfCI.checked) {aMoMfrt=IaMoMfrt*1.05;} else if (mAmOfCD.checked) {aMoMfrt=IaMoMfrt*0.975;}
-if (mAfZfCI.checked) {aMzFfrt=aMzFfrt*1.05;} else if (mAfZfCD.checked) {aMzFfrt=aMzFfrt*0.975;}
-
-if (mBfOfCI.checked) {bMoFfrt=IbMoFfrt*1.025;} else if (mBfOfCD.checked) {bMoFfrt=IbMoFfrt*0.95;}
-if (mBfBfCI.checked) {bMbFfrt=IbMbFfrt*1.05;} else if (mBfBfCD.checked) {bMbFfrt=IbMbFfrt*0.975;}
-if (mBfAfCI.checked) {bMaFfrt=IbMaFfrt*1.025;} else if (mBfAfCD.checked) {bMaFfrt=IbMaFfrt*0.95;}
-if (mBmOfCI.checked) {bMoMfrt=IbMoMfrt*1.025;} else if (mBmOfCD.checked) {bMoMfrt=IbMoMfrt*0.95;}
-if (mBfZfCI.checked) {bMzFfrt=bMzFfrt*1.025;} else if (mBfZfCD.checked) {bMzFfrt=bMzFfrt*0.95;}
-
-if (mOfOfCI.checked) {oMoFfrt=IoMoFfrt*1.025;} else if (mOfOfCD.checked) {oMoFfrt=IoMoFfrt*0.9;}
-if (mOfBfCI.checked) {oMbFfrt=IoMbFfrt*1.025;} else if (mOfBfCD.checked) {oMbFfrt=IoMbFfrt*0.95;}
-if (mOfAfCI.checked) {oMaFfrt=IoMaFfrt*1.05;} else if (mOfAfCD.checked) {oMaFfrt=IoMaFfrt*0.975;}
-if (mOmOfCI.checked) {oMoMfrt=IoMoMfrt*1.025;} else if (mOmOfCD.checked) {IoMoMfrt=oMoMfrt*0.9;}
-if (mOfZfCI.checked) {oMzFfrt=oMzFfrt*1.025;} else if (mOfZfCD.checked) {oMzFfrt=oMzFfrt*0.9;}
-
-if (fAfOfCI.checked) {aFoFfrt=IaFoFfrt*1.05;} else if (fAfOfCD.checked) {aFoFfrt=IaFoFfrt*0.975;}
-if (fAfBfCI.checked) {aFbFfrt=IaFbFfrt*1.025;} else if (fAfBfCD.checked) {aFbFfrt=IaFbFfrt*0.95;}
-if (fAfAfCI.checked) {aFaFfrt=IaFaFfrt*1.025;} else if (fAfAfCD.checked) {aFaFfrt=IaFaFfrt*0.9;}
-if (fAfZfCI.checked) {aFzFfrt=aFzFfrt*1.05;} else if (aFzFfrt.checked) {aFzFfrt=aFzFfrt*0.975;}
-
-if (mZfOfCI.checked) {zMoFfrt=zMoFfrt*1.05;} else if (mZfOfCD.checked) {zMoFfrt=zMoFfrt*0.975;}
-if (mZfBfCI.checked) {zMbFfrt=zMbFfrt*1.025;} else if (mZfBfCD.checked) {zMbFfrt=zMbFfrt*0.95;}
-if (mZfAfCI.checked) {zMaFfrt=zMaFfrt*1.025;} else if (mZfAfCD.checked) {zMaFfrt=zMaFfrt*0.9;}
-if (mZmOfCI.checked) {zMoMfrt=zMoMfrt*1.05;} else if (mZmOfCD.checked) {zMoMfrt=zMoMfrt*0.975;}
-if (mZfZfCI.checked) {zMzFfrt=zMzFfrt*1.025;} else if (mZfZfCD.checked) {zMzFfrt=zMzFfrt*0.975;}
-
-aMbFfrt=Math.max(aMbFfrt,IbMbFfrt);
-bMoFfrt=Math.max(bMoFfrt,IbMbFfrt);
-bMbFfrt=Math.min(bMbFfrt,aMbFfrt,bMoFfrt);
-} 
-else {var FrtCtmClss=document.getElementsByClassName('Frt')
-for (var i=0; i < FrtCtmClss.length; i++) {FrtCtmClss[i].setAttribute('hidden', true);}}
+var FrtCtmClss=document.getElementsByClassName('ClcFrts')
+for (var i=0; i < FrtCtmClss.length; i++) {FrtCtmClss[i].setAttribute('type','number'); FrtCtmClss[i].setAttribute('step','0.01'); FrtCtmClss[i].setAttribute('onChange','calcFrtF()'); FrtCtmClss[i].removeAttribute('readonly');}
+function FrtMnMx(Entry,Calc) {if (Entry=="" || FrtDflt==true) {Rslt=Calc;} else {Rslt=MinMax(Entry,MinMax(Calc*0.8,0,Calc-0.5),Math.max(Calc*1.2,Calc+0.5));} return Rslt;}
+aMbFfrt=FrtMnMx(mAfBf.value,IaMbFfrt); bMoFfrt=FrtMnMx(mBfOf.value,IbMoFfrt);
+bMbFfrt=FrtMnMx(mBfBf.value,IbMbFfrt); aMoFfrt=FrtMnMx(mAfOf.value,IaMoFfrt);
+oMaFfrt=FrtMnMx(mOfAf.value,IoMaFfrt); aMoMfrt=FrtMnMx(mAmOf.value,IaMoMfrt);
+aFoFfrt=FrtMnMx(fAfOf.value,IaFoFfrt); aMaFfrt=FrtMnMx(mAfAf.value,IaMaFfrt);
+bMaFfrt=FrtMnMx(mBfAf.value,IbMaFfrt); oMoFfrt=FrtMnMx(mOfOf.value,IoMoFfrt);
+oMbFfrt=FrtMnMx(mOfBf.value,IoMbFfrt); aFbFfrt=FrtMnMx(fAfBf.value,IaFbFfrt);
+aFaFfrt=FrtMnMx(fAfAf.value,IaFaFfrt); bMoMfrt=FrtMnMx(mBmOf.value,IbMoMfrt);
+oMoMfrt=FrtMnMx(mOmOf.value,IoMoMfrt); 
+zMoFfrt=FrtMnMx(mZfOf.value,zMoFfrt); zMoFfrt=FrtMnMx(mZfOf.value,zMoFfrt);
+zMbFfrt=FrtMnMx(mZfBf.value,zMbFfrt); zMbFfrt=FrtMnMx(mZfBf.value,zMbFfrt);
+zMaFfrt=FrtMnMx(mZfAf.value,zMaFfrt); zMaFfrt=FrtMnMx(mZfAf.value,zMaFfrt);
+zMoMfrt=FrtMnMx(mZmOf.value,zMoMfrt); zMoMfrt=FrtMnMx(mZmOf.value,zMoMfrt);
+aMzFfrt=FrtMnMx(mAfZf.value,aMzFfrt); aMzFfrt=FrtMnMx(mAfZf.value,aMzFfrt);
+bMzFfrt=FrtMnMx(mBfZf.value,bMzFfrt); bMzFfrt=FrtMnMx(mBfZf.value,bMzFfrt);
+oMzFfrt=FrtMnMx(mOfZf.value,oMzFfrt); oMzFfrt=FrtMnMx(mOfZf.value,oMzFfrt);
+aFzFfrt=FrtMnMx(fAfZf.value,aFzFfrt); aFzFfrt=FrtMnMx(fAfZf.value,aFzFfrt);
+zMzFfrt=FrtMnMx(mZfZf.value,zMzFfrt); zMzFfrt=FrtMnMx(mZfZf.value,zMzFfrt);
+FrtDflt=false;}
+else {var FrtCtmClss=document.getElementsByClassName('ClcFrts')
+for (var i=0; i < FrtCtmClss.length; i++) {FrtCtmClss[i].setAttribute('type', 'text'); FrtCtmClss[i].setAttribute('readonly', true);} FrtDflt=false;}
 
 if (CmptTst.value=="Favor") {
 aMbFfrt=Math.max(IaMbFfrt*0.975,IbMbFfrt);
@@ -2641,20 +2486,21 @@ sAfPrc=TwoDgtF(sAfPrc);
 sBfPrc=TwoDgtF(sBfPrc);
 sOfPrc=TwoDgtF(sOfPrc);
 
+pspc=/%\s*(&\w+;)*\s*$/;
 ofpop='% <span style="opacity: 0.5;"><small>of Population</small></span>';
 ofmen='% <span style="opacity: 0.5;"><small>of Men</small></span>';
 ofwmn='% <span style="opacity: 0.5;"><small>of Women</small></span>';
 
-StrtMalePrc=TwoDgtF(StrtMalePrc).replace(/%\s*$/,ofpop);
-StrtFemPrc=TwoDgtF(StrtFemPrc).replace(/%\s*$/,ofpop);
+StrtMalePrc=TwoDgtF(StrtMalePrc).replace(pspc,ofpop);
+StrtFemPrc=TwoDgtF(StrtFemPrc).replace(pspc,ofpop);
 
-StrtPeriPrcMale=TwoDgtF(StrtPeriPrcMale).replace(/%\s*$/,ofmen);
-StrtPeriMalePrc=TwoDgtF(StrtPeriMalePrc).replace(/%\s*$/,ofpop);
-StrtPeriPrcFem=TwoDgtF(StrtPeriPrcFem).replace(/%\s*$/,ofwmn);
-StrtPeriFemPrc=TwoDgtF(StrtPeriFemPrc).replace(/%\s*$/,ofpop);
+StrtPeriPrcMale=TwoDgtF(StrtPeriPrcMale).replace(pspc,ofmen);
+StrtPeriMalePrc=TwoDgtF(StrtPeriMalePrc).replace(pspc,ofpop);
+StrtPeriPrcFem=TwoDgtF(StrtPeriPrcFem).replace(pspc,ofwmn);
+StrtPeriFemPrc=TwoDgtF(StrtPeriFemPrc).replace(pspc,ofpop);
 
-StrtCosexPercMale=TwoDgtF(StrtCosexPercMale).replace(/%\s*$/,ofmen);
-StrtCosexPrcFem=TwoDgtF(StrtCosexPrcFem).replace(/%\s*$/,ofwmn);
+StrtCosexPercMale=TwoDgtF(StrtCosexPercMale).replace(pspc,ofmen);
+StrtCosexPrcFem=TwoDgtF(StrtCosexPrcFem).replace(pspc,ofwmn);
 
 document.getElementById("sAAmP").innerHTML=sAAmPrc;
 document.getElementById("sAZmP").innerHTML=sAZmPrc;
@@ -3831,12 +3677,19 @@ if (RXaMboM.disabled != true) {document.getElementById("RXaMboM").checked=false;
 function R1CkBxFnctB() {R1CkBxFnctA(); R1Cstm=true;}
 
 function R1CkBxFnctA() {RRls=RndRules.value; autoR1_val=autoR1.value;
-if (mAfAf.value <= 1.25) {document.getElementById("R1aMaF").checked=false; document.getElementById("R1aMaF").disabled=true;}
-if (mBfAf.value <= 1.25) {document.getElementById("R1bMaF").checked=false; document.getElementById("R1bMaF").disabled=true;}
-if (mOfOf.value <= 1.25) {document.getElementById("R1oMoF").checked=false; document.getElementById("R1oMoF").disabled=true;}
-if (mOfBf.value <= 1.25) {document.getElementById("R1oMbF").checked=false; document.getElementById("R1oMbF").disabled=true;}
-if (fAfAf.value <= 1.25) {document.getElementById("R1aFaF").checked=false; document.getElementById("R1aFaF").disabled=true;}
-if (mOmOf.value <= 1.25) {document.getElementById("R1oMoM").checked=false; document.getElementById("R1oMoM").disabled=true;}
+if (mAfAf.value <= 1.25) {document.getElementById("R1aMaF").checked=false; R1aMaF_dsbld=true;} else {R1aMaF_dsbld=false;}
+if (mBfAf.value <= 1.25) {document.getElementById("R1bMaF").checked=false; R1bMaF_dsbld=true;} else {R1bMaF_dsbld=false;}
+if (mOfOf.value <= 1.25) {document.getElementById("R1oMoF").checked=false; R1oMoF_dsbld=true;} else {R1oMoF_dsbld=false;}
+if (mOfBf.value <= 1.25) {document.getElementById("R1oMbF").checked=false; R1oMbF_dsbld=true;} else {R1oMbF_dsbld=false;}
+if (fAfAf.value <= 1.25) {document.getElementById("R1aFaF").checked=false; R1aFaF_dsbld=true;} else {R1aFaF_dsbld=false;}
+if (mOmOf.value <= 1.25) {document.getElementById("R1oMoM").checked=false; R1oMoM_dsbld=true;} else {R1oMoM_dsbld=false;}
+
+document.getElementById("R1aMaF").disabled=R1aMaF_dsbld;
+document.getElementById("R1bMaF").disabled=R1bMaF_dsbld;
+document.getElementById("R1oMoF").disabled=R1oMoF_dsbld;
+document.getElementById("R1oMbF").disabled=R1oMbF_dsbld;
+document.getElementById("R1aFaF").disabled=R1aFaF_dsbld;
+document.getElementById("R1oMoM").disabled=R1oMoM_dsbld;
 
 if (R1aMoF.checked==true && RRls=="InclR") {R2aMoF_chk=true; R2aMoF_dsbld=true;}
 else if (R1aMoF.checked != true) 
@@ -5038,7 +4891,7 @@ return ArryVal;}
 
 function QckPairFunc() {StrtCntF();
 
-if (mAf.value=="" && mBf.value=="" && mOf2.value=="" && mOf1.value=="" && fAf1.value=="" && fAf2.value=="" && fBf.value=="" && fOf.value=="") {defFertFunc();}
+if (mAf.value=="" && mBf.value=="" && mOf2.value=="" && mOf1.value=="" && fAf1.value=="" && fAf2.value=="" && fBf.value=="" && fOf.value=="") {defFrtF();}
 
 SumStartCnt=(sAAmCnt +sABmCnt +sAOmCnt +sBAmCnt +sBBmCnt +sBOmCnt +sOOmCnt +sAAfCnt +sABfCnt +sBAfCnt +sBBfCnt +sBOfCnt +sOAfCnt +sOBfCnt +sOOfCnt);
 
@@ -6519,9 +6372,10 @@ nlyaMoFfrt=Math.max(Math.min(nlyaMoFfrt,AOFrtMax),AOFrtMin);
 nlyBfrt=Math.max(Math.min(nlyBfrt,BFrtMax),BFrtMin);
 nlyZfrt=Math.max(Math.min(nlyZfrt,ZFrtMax),ZFrtMin);
 
-document.getElementById("mAfOf").value=Rnd100ths(0.9*aMoFfrt+0.1*nlyaMoFfrt);
+if (CmptTst.value!="Cstm")
+{document.getElementById("mAfOf").value=Rnd100ths(0.9*aMoFfrt+0.1*nlyaMoFfrt);
 document.getElementById("mBfBf").value=Rnd100ths(0.9*bMbFfrt+0.1*nlyBfrt);
-document.getElementById("mZfZf").value=Rnd100ths(0.9*zMzFfrt+0.1*nlyZfrt);
+document.getElementById("mZfZf").value=Rnd100ths(0.9*zMzFfrt+0.1*nlyZfrt);}
 
 if (aMoFfrt > IaMoFfrt) {C0AllB=C0AllB*0.75; C0DomB=C0DomB*0.75; P1AllB=P1AllB*0.875; P1DomB=P1DomB*0.875;}
 if (bMbFfrt > IbMbFfrt) {C0AllAnO=C0AllAnO*0.75; C0DomAnO=C0DomAnO*0.75; P1AllAnO=P1AllAnO*0.875; P1DomAnO=P1DomAnO*0.875;}
@@ -10680,7 +10534,7 @@ TtlABmBAm=(ABmRVal+BAmRVal);
 BAmRto=BAmRVal/TtlABmBAm; ABmRto=ABmRVal/TtlABmBAm;}
 else {BAmRto=0; ABmRto=1;}
 
-baMcCnt=Rnd100ths(abMcCntIntl*BAmRto);
+baMcCnt=Rnd1Ds(abMcCntIntl*BAmRto);
 aMoF_bMc_Cnt+=aMoF_abMba_Cnt*BAmRto; aMbF_bMc_Cnt+=aMbF_abMba_Cnt*BAmRto; 
 aMaF_bMc_Cnt+=aMaF_abMba_Cnt*BAmRto; aMoM_bMc_Cnt+=aMoM_abMba_Cnt*BAmRto; 
 bMoF_bMc_Cnt+=bMoF_abMba_Cnt*BAmRto; bMbF_bMc_Cnt+=bMbF_abMba_Cnt*BAmRto; 
@@ -10689,7 +10543,7 @@ oMoF_bMc_Cnt+=oMoF_abMba_Cnt*BAmRto; oMbF_bMc_Cnt+=oMbF_abMba_Cnt*BAmRto;
 oMaF_bMc_Cnt+=oMaF_abMba_Cnt*BAmRto; oMoM_bMc_Cnt+=oMoM_abMba_Cnt*BAmRto;
 aMaM_bMc_Cnt+=aMaM_abMba_Cnt*BAmRto; aMbM_bMc_Cnt+=aMbM_abMba_Cnt*BAmRto;
 
-abMcCnt=Rnd100ths(abMcCntIntl*ABmRto);
+abMcCnt=Rnd1Ds(abMcCntIntl*ABmRto);
 aMoF_aMc_Cnt+=aMoF_abMba_Cnt*ABmRto; aMbF_aMc_Cnt+=aMbF_abMba_Cnt*ABmRto; 
 aMaF_aMc_Cnt+=aMaF_abMba_Cnt*ABmRto; aMoM_aMc_Cnt+=aMoM_abMba_Cnt*ABmRto; 
 bMoF_aMc_Cnt+=bMoF_abMba_Cnt*ABmRto; bMbF_aMc_Cnt+=bMbF_abMba_Cnt*ABmRto; 
@@ -10710,7 +10564,7 @@ TtlOBfBOf=(OBfRVal+BOfRVal);
 BOfRto=BOfRVal/TtlOBfBOf; OBfRto=OBfRVal/TtlOBfBOf;}
 else {BOfRto=0; OBfRto=1;}
 
-boFcCnt=Rnd100ths(obFcCntIntl*BOfRto); 
+boFcCnt=Rnd1Ds(obFcCntIntl*BOfRto); 
 aMoF_bFc_Cnt+=aMoF_obFbo_Cnt*BOfRto; aMbF_bFc_Cnt+=aMbF_obFbo_Cnt*BOfRto; 
 aMaF_bFc_Cnt+=aMaF_obFbo_Cnt*BOfRto; aMoM_bFc_Cnt+=aMoM_obFbo_Cnt*BOfRto; 
 bMoF_bFc_Cnt+=bMoF_obFbo_Cnt*BOfRto; bMbF_bFc_Cnt+=bMbF_obFbo_Cnt*BOfRto; 
@@ -10722,7 +10576,7 @@ aFaF_bFc_Cnt+=aFaF_obFbo_Cnt*BOfRto; oFoF_bFc_Cnt+=oFoF_obFbo_Cnt*BOfRto;
 oFbF_bFc_Cnt+=oFbF_obFbo_Cnt*BOfRto; aMaM_bFc_Cnt+=aMaM_obFbo_Cnt*BOfRto; 
 aMbM_bFc_Cnt+=aMbM_obFbo_Cnt*BOfRto;
 
-obFcCnt=Rnd100ths(obFcCntIntl*OBfRto);
+obFcCnt=Rnd1Ds(obFcCntIntl*OBfRto);
 aMoF_oFc_Cnt+=aMoF_obFbo_Cnt*OBfRto; aMbF_oFc_Cnt+=aMbF_obFbo_Cnt*OBfRto; 
 aMaF_oFc_Cnt+=aMaF_obFbo_Cnt*OBfRto; aMoM_oFc_Cnt+=aMoM_obFbo_Cnt*OBfRto; 
 bMoF_oFc_Cnt+=bMoF_obFbo_Cnt*OBfRto; bMbF_oFc_Cnt+=bMbF_obFbo_Cnt*OBfRto; 
@@ -10746,7 +10600,7 @@ TtlOBmBOm=(OBmRVal+BOmRVal);
 OBmRto=OBmRVal/TtlOBmBOm; BOmRto=BOmRVal/TtlOBmBOm;}
 else {OBmRto=0; BOmRto=1;}
 
-obMcCnt=Rnd100ths(boMcCntIntl*OBmRto);
+obMcCnt=Rnd1Ds(boMcCntIntl*OBmRto);
 aMoF_oMc_Cnt+=aMoF_obMbo_Cnt*OBmRto; aMbF_oMc_Cnt+=aMbF_obMbo_Cnt*OBmRto; 
 aMaF_oMc_Cnt+=aMaF_obMbo_Cnt*OBmRto; aMoM_oMc_Cnt+=aMoM_obMbo_Cnt*OBmRto; 
 bMoF_oMc_Cnt+=bMoF_obMbo_Cnt*OBmRto; bMbF_oMc_Cnt+=bMbF_obMbo_Cnt*OBmRto; 
@@ -10755,7 +10609,7 @@ oMoF_oMc_Cnt+=oMoF_obMbo_Cnt*OBmRto; oMbF_oMc_Cnt+=oMbF_obMbo_Cnt*OBmRto;
 oMaF_oMc_Cnt+=oMaF_obMbo_Cnt*OBmRto; oMoM_oMc_Cnt+=oMoM_obMbo_Cnt*OBmRto; 
 aMaM_oMc_Cnt+=aMaM_obMbo_Cnt*OBmRto; aMbM_oMc_Cnt+=aMbM_obMbo_Cnt*OBmRto;
 
-boMcCnt=Rnd100ths(boMcCntIntl*BOmRto);
+boMcCnt=Rnd1Ds(boMcCntIntl*BOmRto);
 aMoF_bMc_Cnt+=aMoF_obMbo_Cnt*BOmRto; aMbF_bMc_Cnt+=aMbF_obMbo_Cnt*BOmRto; 
 aMaF_bMc_Cnt+=aMaF_obMbo_Cnt*BOmRto; aMoM_bMc_Cnt+=aMoM_obMbo_Cnt*BOmRto; 
 bMoF_bMc_Cnt+=bMoF_obMbo_Cnt*BOmRto; bMbF_bMc_Cnt+=bMbF_obMbo_Cnt*BOmRto; 
@@ -10776,7 +10630,7 @@ TtlABfBAf=(ABfRVal+BAfRVal);
 ABfRto=ABfRVal/TtlABfBAf; BAfRto=BAfRVal/TtlABfBAf;}
 else {ABfRto=0; BAfRto=1;}
 
-abFcCnt=Rnd100ths(abFcCntIntl*ABfRto); baFcCnt=Rnd100ths(abFcCntIntl*BAfRto);
+abFcCnt=Rnd1Ds(abFcCntIntl*ABfRto); baFcCnt=Rnd1Ds(abFcCntIntl*BAfRto);
 aMoF_aFc_Cnt+=aMoF_abFba_Cnt*ABfRto; aMbF_aFc_Cnt+=aMbF_abFba_Cnt*ABfRto; 
 aMaF_aFc_Cnt+=aMaF_abFba_Cnt*ABfRto; aMoM_aFc_Cnt+=aMoM_abFba_Cnt*ABfRto; 
 bMoF_aFc_Cnt+=bMoF_abFba_Cnt*ABfRto; bMbF_aFc_Cnt+=bMbF_abFba_Cnt*ABfRto; 
@@ -10811,7 +10665,7 @@ TtlZBmBZm=(ZBmRVal+BZmRVal);
 ZBmRto=ZBmRVal/TtlZBmBZm; BZmRto=BZmRVal/TtlZBmBZm;}
 else if (/Rec/.test(ZdomMVal)) {ZBmRto=0; BZmRto=1;}
 
-zbMcCnt=Rnd100ths(bzMcCntIntl*ZBmRto);
+zbMcCnt=Rnd1Ds(bzMcCntIntl*ZBmRto);
 aMoF_aMc_Cnt+=aMoF_zbMbz_Cnt*ZBmRto; aMbF_aMc_Cnt+=aMbF_zbMbz_Cnt*ZBmRto; 
 aMaF_aMc_Cnt+=aMaF_zbMbz_Cnt*ZBmRto; aMoM_aMc_Cnt+=aMoM_zbMbz_Cnt*ZBmRto; 
 bMoF_aMc_Cnt+=bMoF_zbMbz_Cnt*ZBmRto; bMbF_aMc_Cnt+=bMbF_zbMbz_Cnt*ZBmRto; 
@@ -10820,7 +10674,7 @@ oMoF_aMc_Cnt+=oMoF_zbMbz_Cnt*ZBmRto; oMbF_aMc_Cnt+=oMbF_zbMbz_Cnt*ZBmRto;
 oMaF_aMc_Cnt+=oMaF_zbMbz_Cnt*ZBmRto; oMoM_aMc_Cnt+=oMoM_zbMbz_Cnt*ZBmRto; 
 aMaM_aMc_Cnt+=aMaM_zbMbz_Cnt*ZBmRto; aMbM_aMc_Cnt+=aMbM_zbMbz_Cnt*ZBmRto;
 
-bzMcCnt=Rnd100ths(bzMcCntIntl*BZmRto);
+bzMcCnt=Rnd1Ds(bzMcCntIntl*BZmRto);
 aMoF_bMc_Cnt+=aMoF_zbMbz_Cnt*BZmRto; aMbF_bMc_Cnt+=aMbF_zbMbz_Cnt*BZmRto; 
 aMaF_bMc_Cnt+=aMaF_zbMbz_Cnt*BZmRto; aMoM_bMc_Cnt+=aMoM_zbMbz_Cnt*BZmRto; 
 bMoF_bMc_Cnt+=bMoF_zbMbz_Cnt*BZmRto; bMbF_bMc_Cnt+=bMbF_zbMbz_Cnt*BZmRto; 
@@ -10841,7 +10695,7 @@ TtlZBfBZf=(ZBfRVal+BZfRVal);
 ZBfRto=ZBfRVal/TtlZBfBZf; BZfRto=BZfRVal/TtlZBfBZf;}
 else if (/Rec/.test(ZdomFVal)) {ZBfRto=0; BZfRto=1;}
 
-zbFcCnt=Rnd100ths(bzFcCntIntl*ZBfRto);
+zbFcCnt=Rnd1Ds(bzFcCntIntl*ZBfRto);
 aMoF_oFc_Cnt+=aMoF_zbFbz_Cnt*ZBfRto; aMbF_oFc_Cnt+=aMbF_zbFbz_Cnt*ZBfRto; 
 aMaF_oFc_Cnt+=aMaF_zbFbz_Cnt*ZBfRto; aMoM_oFc_Cnt+=aMoM_zbFbz_Cnt*ZBfRto; 
 bMoF_oFc_Cnt+=bMoF_zbFbz_Cnt*ZBfRto; bMbF_oFc_Cnt+=bMbF_zbFbz_Cnt*ZBfRto; 
@@ -10853,7 +10707,7 @@ aFaF_oFc_Cnt+=aFaF_zbFbz_Cnt*ZBfRto; oFoF_oFc_Cnt+=oFoF_zbFbz_Cnt*ZBfRto;
 oFbF_oFc_Cnt+=oFbF_zbFbz_Cnt*ZBfRto; aMaM_oFc_Cnt+=aMaM_zbFbz_Cnt*ZBfRto; 
 aMbM_oFc_Cnt+=aMbM_zbFbz_Cnt*ZBfRto;
 
-bzFcCnt=Rnd100ths(bzFcCntIntl*BZfRto);
+bzFcCnt=Rnd1Ds(bzFcCntIntl*BZfRto);
 aMoF_bFc_Cnt+=aMoF_zbFbz_Cnt*BZfRto; aMbF_bFc_Cnt+=aMbF_zbFbz_Cnt*BZfRto; 
 aMaF_bFc_Cnt+=aMaF_zbFbz_Cnt*BZfRto; aMoM_bFc_Cnt+=aMoM_zbFbz_Cnt*BZfRto; 
 bMoF_bFc_Cnt+=bMoF_zbFbz_Cnt*BZfRto; bMbF_bFc_Cnt+=bMbF_zbFbz_Cnt*BZfRto; 
@@ -10868,7 +10722,7 @@ aMbM_bFc_Cnt+=aMbM_zbFbz_Cnt*BZfRto;
 /////
 
 function RndKds(NmbrVal) {
-if (NmbrVal<10) {NewVal=Rnd100ths(NmbrVal).toString().replace(/(^|&ensp;)\d+$/,'$&.00').replace(/\d+\.\d$/,'$&0');} else if (NmbrVal<100) {NewVal=Rnd10ths(NmbrVal).toString().replace(/(^|&ensp;)\d+$/,'$&.0');} else {NewVal=Rnd100ths(NmbrVal);} return NewVal.toString().replace(/0.00/,'0') || 0;}
+if (NmbrVal<10) {NewVal=Rnd100ths(NmbrVal).toString().replace(/(^|&ensp;)\d+$/,'$&.00').replace(/\d+\.\d$/,'$&0');} else if (NmbrVal<100) {NewVal=Rnd10ths(NmbrVal).toString().replace(/(^|&ensp;)\d+$/,'$&.0');} else {NewVal=Rnd1Ds(NmbrVal);} return NewVal.toString().replace(/0.00/,'0') || 0;}
 
 // Alpha Male Omega Female Pairs
 aMoF_PrCnt=MtchCnt(FnlMtchDsp,/[AZ]\w M \+ [OZ]\w F/g); 
@@ -11422,7 +11276,7 @@ ChildResults='<table>'
      + '<td>🟢</td>'
      + '<td>Cosex Female:</td><td></td>'
      + '<td>'+aFcCnt+'</td><td></td>'
-     + '<td>'+FcCPrc+' <span style="opacity: 0.5;"><small>of of Girls</small></span></td>'
+     + '<td>'+FcCPrc+' <span style="opacity: 0.5;"><small>of Girls</small></span></td>'
   + '</tr>'
   + '<tr>'
      + '<td class="Main">'+ZFOrbs3+'🔵<br>🔵<br>🔵</td>'
